@@ -1,0 +1,86 @@
+# GIT 教程
+# 1. 工作流程
+	克隆仓库的副本到本地
+	在本地修改，添加，删除文件
+	确认改动内容
+	提交改动文件
+	撤回提交，并修改，再提交
+# 2. 重要概念
+	工作区： 即本地副本
+	暂存区:  即.git副本下的index文件，也叫索引
+	版本区:  工作区的隐藏目录，是git的版本库
+
+# 3. 命令及含义
+
+	--init
+	在target_repo目录下执行 git  init  
+	或者  git init  target_repo
+			  ——选择当前目录作为git仓库，初始化
+			  ——作用是在当前目录生成.git目录，是仓库的副本
+			  
+	--add
+	添加想要纳入版本控制的文件到暂存区
+		事例： git add index.html 
+		
+	--commit
+	本次提交的说明信息
+		事例： git commit -m "本次提交说明"  --windows用双引号，linux用单引号
+		
+	--clone
+	拷贝项目
+		事例：  git clone https、ssh连接  .git 
+				如果只需要一个目录，则
+				git clone https、ssh连接.git  mydirectory
+	--config
+	配置信息
+		事例：  git config  --list 
+				git config -e 针对当前仓库做配置
+				git config -e --global 针对系统上的所有仓库
+				git config --global user.name  'username' 提交代码时的用户信息
+				git config --global user.emain 'user-email' 用户邮箱
+				git config user.name 查看用户
+				git config user.email 查看邮箱
+				
+	--status 查看仓库当前的状态，显示有变更的文件
+		事例： 
+				git add <修改> <新增>
+				输出 modified：  <修改>
+					 new file:   <新增>
+					 
+	--diff 比较暂存区和工作区文件的不同
+		事例：
+			    git diff --cached  已缓存的改动
+				git diff  HEAD  一缓存的与未缓存的所有改动
+	
+	--rm 将文件从暂存区和工作区中删除
+			-f  强制删除暂存区和工作区
+			--cached 仅删除暂存区的改动
+	
+	--mv 移动或重命名一个文件、目录或者软连接
+	
+	--reset 回退版本
+	
+	--log  查看历史提交日志
+	
+	--remote 
+			-v 查看所有的远程仓库
+			事例结果：
+					origin  https://github.com/slackenoff/slackenoff.github.io (fetch)
+					origin  https://github.com/slackenoff/slackenoff.github.io (push)
+			remote 可以与add，rm ，rename等命令连用
+# 4. 分支管理
+
+git branch (branchname)  创建分支
+git checkout (branchname) 切换分支
+git merged 合并分支
+git branch  查看分支
+git branch -b （branchname） 创建分支并切换到该分支
+git branch -d  (branchname)  删除分支命令
+注意： 合并冲突
+
+
+# 5. 版本标签
+
+git tag -a v2.1 （如果忘记打标签，可以补充标签，在标签后写提交的代码）
+
+	-a 创建一个带注解的标签
