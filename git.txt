@@ -84,3 +84,7 @@ git branch -d  (branchname)  删除分支命令
 git tag -a v2.1 （如果忘记打标签，可以补充标签，在标签后写提交的代码）
 
 	-a 创建一个带注解的标签
+
+# 6. 本地提交与远程提交
+	git push origin[仓库的https/ssh] main[分支]
+报错提醒： Your branch is ahead of 'origin/main' by 1 commit.
