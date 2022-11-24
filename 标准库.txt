@@ -1,0 +1,46 @@
+##### 标准库
+！！  
+	   1.os标准库：
+				  模块：abc 、 ntpath 、 stat  、 sys
+			内置函数：
+				os.getcwd()  无参，返回当前的目录路径
+				os.getenv(key,default) 有参，返回环境变量，无则返回none
+				os.getlogin()  无参，返回当前用户
+				os.getpid()  进程ID
+				os.getppid() 父进程ID
+				os.kill(pid,signal,/) 杀进程
+				os.mkdir(path,mode = 511,* , dir_fd = none)  windows系统不需要mode参数
+				os.open(path,flags,mode = 511,*,dir_fd = none)  打开文件
+				os.putenv(name,value,/) 修改或添加一个环境变量
+				os.read(fd,length,/) 
+				os.remove(path,*,dir_fd=none) 移除文件
+				os.removedirs(name) 移除目录
+				os.rename(src,dst,*,src_dir_fd = none,dst_dir_fd=none) 
+				os.renames(old,new)
+				os.replace(src,dst,*,src_dir_fd = none,dst_dir_fd=none)
+				os.rmdir(path,*,dir_fd = none)
+				os.scandir(path = none)
+				os.strerror(code, /) 
+				os.system(command) 执行shell命令
+				os.times() 返回集合
+				os.execv(path,argv,/) 
+				os.execve(path,argv,env)
+				os.execvp(file,args)
+				os.execvpe(file,args,env)
+	   2.shutil	
+	   3.glob
+				glob.escape(pathname) 忽略特殊字符
+				glob.glob(pathname,*,root_dir=none,dir_fd =none,recursive = false) 返回所有匹配的文件路径列表，路径可以是相对路径或绝对路径
+				glob.iglob(pathname,*,root_dir = none, dir_fd = none, recursive = false)  
+					iglob的数据存放在内存中，不能直接读取，如果直接打印，<generator object _iglob at 0x00000234504A6650>，要用for循环，逐个读取
+	   4.sys
+	   5.re
+	   6.math
+	   7.random
+	   8.urllib
+	   9.smtplib
+	   10.datetime
+	   11. zlib，gzip，bz2 ，zipfile ， tarfile
+	   12. timeit ， profile ， pstats
+	   13. doctest ，unittest
+	   14. 
