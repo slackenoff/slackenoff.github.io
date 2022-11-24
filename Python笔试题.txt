@@ -42,4 +42,55 @@
 
 9. 随机数
 
-10. 
+10. CGI 通用网关接口，是一段运行在服务器上的程序，提供同客户端html页面的接口
+		--暂时不考虑
+		
+11. PyMySQL  python3用于连接mysql服务器的库
+
+	对数据库操作的简单事例：
+	# 导入mysql库
+	import pymysql
+	
+	# 创建连接
+	conn = pymysql.connect('localhost','user','pwd','database')
+	
+	# 使用cursor（）创建一个游标对象
+	
+	cur = conn.cursor()
+	
+	# 使用execute执行sql
+	try:
+		cur.execute('sql_statement')
+		conn.commit()
+	except:
+		conn.rollback()
+	事例： sql_statement = '''select ....'''
+	
+	# 使用fetchone/all获取单条数据
+	
+	data = cur.fetchone/all()
+	
+	print('%s' % data)
+	
+	# 关闭连接
+	conn.close()
+
+12. 多线程
+	线程，进程，上下文
+	
+	线程生命周期
+	
+	线程分类： 内核线程，用户线程
+	
+	python3的线程模块： _thread 及threading
+	
+	线程同步
+	
+	线程优先级队列
+
+13. 网络编程
+	a. socket
+	b.socketserver
+	
+	
+	
