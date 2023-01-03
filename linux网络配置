@@ -1,1 +1,12 @@
-ifconfig 命令
+ifconfig [网络设备] [参数] 命令
+
+用途： 显示或设置网络设备
+
+e.g.  __________
+
+ifconfig eth33 up/down 启动或关闭指定网卡
+ifconfig eth33 add/del [inet6 addr]  为网卡配置和删除IPV6地址
+ifconfig eth33 arp 启用arp协议
+ifconfig eth33 -arp 关闭arp协议
+ifconfig eth33 mtu  1500  设置能通过的最大数据包大小为1500 字节byte
+ifconfig eth33 192.168.xx.xx netmask 255.255.255.0 broadcast 192.168.1.255
