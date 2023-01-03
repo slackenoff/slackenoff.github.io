@@ -17,3 +17,13 @@ ifconfig eth33 192.168.xx.xx netmask 255.255.255.0 broadcast 192.168.1.255
 
 网卡配置文件的目录为： /etc/sysconfig/network-scripts[/ifcfg-ensxx]
 其他途径修改为临时修改，永久修改须改动配置文件，重启network服务后生效： systemctl restart network
+TYPE=Ethernet                             #网卡类型，Ethernet为以太网
+BOOTPROTO=static                          #网络配置方式。static为静态dhcp为动态 
+DEVICE=ens33                              #网络接口名称                                         
+NAME=ens33                                #网络接口名称
+UUID=                        #网卡地址
+ONBOOT=yes                                #是否开机自启动
+IPADDR=                      #网络接口IP地址
+GATEWAY=                     #网络接口默认网关
+NETMASK=255.255.255.0                     #网络接口子网掩码
+DNS1=                        #域名解析服务器地址
