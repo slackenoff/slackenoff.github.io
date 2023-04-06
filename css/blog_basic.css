@@ -175,7 +175,7 @@ pre .regexp {
   color: #42b983 !important;
 }
 pre .title {
-  color: #83b917 !important;
+  color: #ffa500 !important;
 }
 pre .tag .value,
 pre .string,
@@ -258,6 +258,7 @@ h6 {
 h1 {
   font-size: 2.1rem;
   line-height: 1.2em;
+  color: #0ff;
 }
 h2 {
   font-size: 1.9rem;
