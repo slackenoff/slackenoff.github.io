@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>博客搭建过程记录 | 劣质真心的Blog</title>
+  <title>oracle基础 | 劣质真心的Blog</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录下hexo+github博客搭建过程">
+  <meta name="description" content="oracle简介">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客搭建过程记录">
-<meta property="og:url" content="http://example.com/2023/04/02/2023-4-2-%E9%9A%8F%E7%AC%94/index.html">
+<meta property="og:title" content="oracle基础">
+<meta property="og:url" content="http://example.com/2023/04/02/oracle%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="劣质真心的Blog">
-<meta property="og:description" content="记录下hexo+github博客搭建过程">
+<meta property="og:description" content="oracle简介">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-02T05:42:42.000Z">
-<meta property="article:modified_time" content="2023-04-02T07:49:09.009Z">
+<meta property="article:published_time" content="2023-04-02T07:56:04.000Z">
+<meta property="article:modified_time" content="2023-04-06T03:04:33.093Z">
 <meta property="article:author" content="劣质真心">
-<meta property="article:tag" content="环境搭建类">
+<meta property="article:tag" content="oracle">
 <meta name="twitter:card" content="summary">
   
   
@@ -149,11 +149,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-2023-4-2-随笔" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-oracle基础" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/04/02/2023-4-2-%E9%9A%8F%E7%AC%94/" class="article-date">
-  	<time datetime="2023-04-02T05:42:42.000Z" itemprop="datePublished">星期日,四月 2日 2023</time>
+      <a href="/2023/04/02/oracle%E5%9F%BA%E7%A1%80/" class="article-date">
+  	<time datetime="2023-04-02T07:56:04.000Z" itemprop="datePublished">星期日,四月 2日 2023</time>
 </a>
     </div>
   
@@ -166,7 +166,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      博客搭建过程记录
+      oracle基础
       
     </h1>
   
@@ -176,7 +176,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%B1%BB/" rel="tag">环境搭建类</a></li></ul>
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li></ul>
 	</div>
 
         
@@ -188,37 +188,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录下hexo-github博客搭建过程"><a href="#记录下hexo-github博客搭建过程" class="headerlink" title="记录下hexo+github博客搭建过程"></a><strong>记录下hexo+github博客搭建过程</strong></h1><span id="more"></span>
-<h2 id="1-第一步-github创建repo"><a href="#1-第一步-github创建repo" class="headerlink" title="1. 第一步 github创建repo"></a><strong>1. 第一步 github创建repo</strong></h2><p>命名规范如： githubusername.github.io，不能自定义。</p>
-<h2 id="2-第二步-本地配置"><a href="#2-第二步-本地配置" class="headerlink" title="2. 第二步 本地配置"></a><strong>2. 第二步 本地配置</strong></h2><p>主要有2部分，node+hex的环境搭建及部署，git+github的环境搭建及部署。</p>
-<p><em><strong>2.1</strong></em> 先安装node，<a target="_blank" rel="noopener" href="https://nodejs.org/en">node网址</a>，配置环境变量 ，添加path</p>
-<p><em><strong>2.2</strong></em> 指定一个目录，进入终端，在该目录下执行  ：</p>
-<pre><code>    npm install -g hexo 
+        <h2 id="oracle简介"><a href="#oracle简介" class="headerlink" title="oracle简介"></a><strong>oracle简介</strong></h2><span id="more"></span>
+<p>ORACLE数据库系统是美国ORACLE公司（甲骨文）提供的以分布式数据库为核心的一组软件产品，是目前最流行的客户 / 服务器（client / server 或 B / S）体系结构的数据库之一。迄今为止ORACLE数据库是世界上使用最广泛的数据库管理系统。</p>
+<h2 id="oracle的特点"><a href="#oracle的特点" class="headerlink" title="oracle的特点"></a><strong>oracle的特点</strong></h2><pre><code>    支持多用户、大事务量的事务处理
+    数据安全性和完整性控制（银行金融等行业比较看重这一点）
+    支持分布式数据处理
+    可移植性
 </code></pre>
-<p>默认这个目录就是hexo的根目录</p>
-<p><em><strong>2.3 本地服务配置命令</strong></em> </p>
-<pre><code>    初始化： hexo  init
-    生成默认的hexo模板： hexo  g
-    启动本地预览服务，-p指定端口： hexo server -p  5000  （默认是4000）
-</code></pre>
-<p><em><strong>2.4</strong></em> 默认的主题很简约，所以可以考虑改主题,这是<br>        <a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题的官网地址</a> ,<br>        在根目录下，打卡bash终端，</p>
-<pre><code>    git clone  [主题的github地址] themes/[主题名]
-</code></pre>
-<p>默认会下载到hexo的themes目录下，文件夹名为[主题名]，按照对应仓库下的readme.md文件，配置yml。</p>
-<p><em><strong>2.5</strong></em> 修改完，刷新本地的静态页面，观察效果</p>
-<h2 id="3-第三步-上传github仓库"><a href="#3-第三步-上传github仓库" class="headerlink" title="3.第三步 上传github仓库"></a><strong>3.第三步 上传github仓库</strong></h2><pre><code>hexo d 上传配置到github的repo
-</code></pre>
-<p><em><strong>3.1</strong></em> git配置</p>
-<pre><code>    git config user.email &quot;&quot; &lt;br&gt;
-    git config user.name  &quot;&quot;
-    ssh-keygen -t rsa -C &quot;邮箱地址&quot;
-</code></pre>
-<p>github设置中，修改ssh的绑定信息</p>
-<p><strong>————————————-配置完成</strong></p>
-<h2 id="4-第四步-上传远端仓库"><a href="#4-第四步-上传远端仓库" class="headerlink" title="4. 第四步 上传远端仓库"></a><strong>4. 第四步 上传远端仓库</strong></h2><pre><code>    hexo clean
-    hexo d -g
-</code></pre>
-<h2 id="5-至此就可以访问xxx-github-io了，如果不能正常访问，可以考虑主题文件缺失，或者配置有误，一般是低级错误导致的"><a href="#5-至此就可以访问xxx-github-io了，如果不能正常访问，可以考虑主题文件缺失，或者配置有误，一般是低级错误导致的" class="headerlink" title="5. 至此就可以访问xxx.github.io了，如果不能正常访问，可以考虑主题文件缺失，或者配置有误，一般是低级错误导致的"></a><strong>5. 至此就可以访问xxx.github.io了，如果不能正常访问，可以考虑主题文件缺失，或者配置有误，一般是低级错误导致的</strong></h2>
+<h2 id="数据库相关概念"><a href="#数据库相关概念" class="headerlink" title="数据库相关概念"></a><strong>数据库相关概念</strong></h2><p>实例、用户、表空间</p>
+<h2 id="sql基础"><a href="#sql基础" class="headerlink" title="sql基础"></a>sql基础</h2>
       
     </div>
     
@@ -227,15 +205,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/04/02/oracle%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">&lt;</strong>
       <div class="article-nav-title">
         
-          oracle基础
+          概念积累
         
       </div>
     </a>
   
+  
+    <a href="/2023/04/02/2023-4-2-%E9%9A%8F%E7%AC%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">博客搭建过程记录</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
   
 </nav>
 
