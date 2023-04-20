@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title> · 劣质真心的Blog</title><meta name="description" content="Docker采用客户端/服务器端架构, 使用远程API来管理和创建容器, 其可以轻松的创建一个轻量级的, 可移植的, 自给自足的容器. 
+
+
+
+
+
+相较于虚拟机，docker的交付速度更快，资源消耗更低，基本没有性能损耗。
+
+
+    传统虚拟机是虚拟出一个主机硬件, 并且运行一个完整的操作系统, "><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>无用之人</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a></a></h3></div><div class="post-content"><p><blockquote>
+<ol>
+<li>Docker采用客户端/服务器端架构, 使用远程API来管理和创建容器, 其可以轻松的创建一个轻量级的, 可移植的, 自给自足的容器. </li>
+</ol>
+</blockquote>
+<span id="more"></span>
+<blockquote>
+<ol start="2">
+<li>相较于虚拟机，docker的交付速度更快，资源消耗更低，基本没有性能损耗。</li>
+</ol>
+</blockquote>
+<pre><code>    传统虚拟机是虚拟出一个主机硬件, 并且运行一个完整的操作系统, 然后在这个系统上安装和运行软件,在物理机上，运行的虚拟机的数量很有限。
+
+    容器内的应用直接运行在宿主机的内核之上, 容器并没有自己的内核, 也不需要虚拟硬件, 相当轻量化，相较于虚拟机，容器可以运行几百个。
+
+    每个容器间是相互隔离, 每个容器内都要一个属于自己的独立文件系统, 独立的进程空间, 网络空间, 用户空间等, 所以在同一个宿主机上的多个容器之间彼此不会相互影响
+</code></pre>
+<blockquote>
+<ol start="3">
+<li>Docker的三大理念就是build, ship, run. </li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>Docker通过namespace和cgroup来提供容器的资源隔离与安全保障等, 所以Docker容器在运行时, 不需要类似虚拟机的额外资源开销, 因此可以大幅度提供资源利用率</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li>docker结构</li>
+</ol>
+</blockquote>
+<pre><code>    client：通过client与daemon建立通信
+    daemon： daemon是系统进程，运行docker即运行daemon，
+        1. 用于接收并处理client发起的请求，
+        2. 管理所有的docker容器。 
+                daemon的组成： server、engine and Job。  
+                server接收请求后，通过路由寻找handler，并分发给对应handler处理请求
+                engine是docker的核心模块，存储容器信息，管理docker大部分job的执行
+                job是gengine内部的基本工作执行单元，如运行、创建、下载等动作
+        3.registry： 存储容器镜像的仓库。容器镜像是容器创建时用来初始化容器的文件系统内容。  与registry通信一般有3种动作， search  搜索、pull 下载  、push 上传
+</code></pre>
+<blockquote>
+<ol start="6">
+<li>安装 docker<br>Docker支持64位版本的CentOS 7和CentOS 8及更高版本，它要求Linux内核版本不低于3.10。</li>
+</ol>
+</blockquote>
+<pre><code>    1. 卸载旧的版本  (重新安装需要这一步)
+              yum remove docker *** /// ***指docker相关的目录全部删掉
+    2. 配置仓库     
+            先下载软件包：  yum install -y yum-utils
+            国内的仓库： yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+    3. 安装
+            yum install -y docker-ce  下载过程中报错，会有建议执行命令，照着敲就好了。
+    4.启动docker
+            systemctl start docker
+            或
+            service docker start
+    5.常见的Docker操作命令：
+            搜索仓库镜像：docker search 镜像名
+            拉取镜像：docker pull 镜像名       下载的镜像存放在 /var/lib/docker/image下
+            查看正在运行的容器：docker ps
+            查看所有容器：docker ps -a
+            删除容器：docker rm container_id
+            查看镜像：docker images
+            删除镜像：docker rmi image_id
+            启动（停止的）容器：docker start 容器ID
+            停止容器：docker stop  容器ID
+            重启容器：docker restart 容器ID
+            通过docker help命令来查看。
+    6. 待更新
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-20</span><span class="leancloud_visitors"></span><span>About826words, 2min45secread</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/20/docker/,劣质真心的Blog,,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/06/linux%E5%91%BD%E4%BB%A4/" title="linux命令">Próximo post</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
