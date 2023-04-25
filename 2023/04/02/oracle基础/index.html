@@ -7,5 +7,117 @@ oracle的特点 "><meta name="keywords" content="Blog,博客,Hexo"><meta content
     支持分布式数据处理
     可移植性
 </code></pre>
-<h1 id="数据库相关概念"><a href="#数据库相关概念" class="headerlink" title="数据库相关概念"></a><strong>数据库相关概念</strong></h1><p>实例、用户、表空间</p>
-<h1 id="sql基础"><a href="#sql基础" class="headerlink" title="sql基础"></a>sql基础</h1></p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-02</span><i class="fa fa-tag"></i><a class="tag" href="/tags/oracle/" title="oracle">oracle </a><span class="leancloud_visitors"></span><span>About 175 words, 35 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/02/oracle基础/,劣质真心的Blog,oracle基础,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/" title="概念积累">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/02/2023-4-2-%E9%9A%8F%E7%AC%94/" title="博客搭建过程记录">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+<h1 id="oracle-体系结构"><a href="#oracle-体系结构" class="headerlink" title="oracle 体系结构"></a><strong>oracle 体系结构</strong></h1><pre><code>    database结构  --  
+                    |
+                            物理结构：
+                                    数据文件 *.dbf: 实际存储数据的文件
+                                    日志文件 *.log
+                                    控制文件 *.ctl
+                                    参数文件 InitSID.ora
+
+                            逻辑结构： 
+                                    表空间 tablespace： 数据库的最大逻辑存储结构，和数据文件对应，一个表空间可以有多个数据文件，但一个数据文件只能属于一个表空间。
+                                    段 segment 
+                                    区 extent
+                                    块 block
+    instance结构  --
+                    |
+                            内存结构：sga，包括share pool、db buffer cache、redo log buffer、large pool、java pool。pga程序跑起来时分配，服务于server process，存放服务器进程的数据和控制信息，独立于sga的内存区域。
+                            进程结构：user process、server process 用户连接时即创建，background process：...
+</code></pre>
+<h1 id="数据库相关概念"><a href="#数据库相关概念" class="headerlink" title="数据库相关概念"></a><strong>数据库相关概念</strong></h1><pre><code>    启动oracle前提应先启动instance.
+
+    Instance=SGA+background process实例=内存分配+一组后台进程
+</code></pre>
+<h1 id="sql基础-关键字、表名和字段名都不区分大小写"><a href="#sql基础-关键字、表名和字段名都不区分大小写" class="headerlink" title="sql基础  //关键字、表名和字段名都不区分大小写"></a><strong>sql基础  //关键字、表名和字段名都不区分大小写</strong></h1><pre><code>    =============================================既是操作数据，那必然先从数据类型开始
+    字符串： char 、varchar、varchar2、nvarchar、nvarchar2
+
+    数字： number（l,a）,遵循四舍五入
+
+    日期： date  注意日期格式  yyyy-mm-dd hh24:mi:ss  mi区别于mm月份
+
+    clob和blob： 都属于lob，存储大字段类型，
+            blob-binary large object 二进制大型对象，存储二进制字节流数据，如程序、图像、影音等
+            character large object  字符型大型对象，存储文本型数据，如xml，json
+
+    =============================================sql 标准结构
+    标准sql结构及执行顺序
+    select [TOP|DISTINCT] [选择列表]|[*]
+    from 数据源
+    [where 查询条件]
+    [group by 分组条件]
+    [having 过滤条件]
+    [order by 排序条件 asc|desc nulls first|last];
+
+    查看执行计划：
+    explain  plan FOR 
+SELECT * FROM DEMO o; //step 1
+
+    SELECT * FROM table(DBMS_XPLAN.display()); //step2
+
+    =============================================sql 执行顺序
+    （5）select [（5-3）TOP|（5-2）DISTINCT] （5-1）[选择列表]|[*]
+    （1）from 数据源
+    （2）[where 查询条件]
+    （3）[group by 分组条件]
+    （4）[having 过滤条件]
+    （6）[order by asc|desc nulls first|last];
+
+    =============================================操作类型细分
+    1.DDL（DataDefinitionLanguage）：数据定义语言，用来定义数据库对象：库、表、列等；
+ --drop、create、alter
+    2.DML（DataManipulationLanguage）：数据操作语言，用来定义数据库记录（数据）；
+            --insert 、update 、delete
+    3.DQL（DataQueryLanguage）：数据查询语言，用来查询记录（数据）；
+            --select *** from *** where ***
+    4.DCL（DataControlLanguage）：数据控制语言，用来定义访问权限和安全级别。--显式提交、隐式提交
+            控制方法：set autocommit on/off;
+            --grant、rollback、commit
+
+    =============================================条件判断、循环
+
+    =============================================对象：表、视图、序列、函数和存储过程、游标、触发器、索引、同义词
+    1. 表： 行*列 
+            分区表
+            索引组织表
+            堆标: 默认数据表存储结构
+                    创建方式：
+                            create table tablename（
+                                    col  type，
+                                    ...
+                            ）
+    2. 视图：基于表或者视图，提取或派生出数据
+                    创建方式：
+                            create or replace view as  [select ...] 
+
+    3. 序列：生成唯一整数值的结构，不建议使用，因为序列存储在内存中，内存刷新
+                            序列：
+                            create sequence seq_auto_add
+                            start with 1  --起始编号
+                            nomaxvalue  --不设置最大值上限，默认  10^28-1
+                            nominvalue  --不设置最小值下限，默认  -(10^27-1)
+                            increment by 1  --设置增长步长, 负数表示递减
+                            cache 20;  --默认缓存是20，第一次新增，则直接在缓存中写入20个数字，下一次新增直接获取缓存的数字；当缓存被刷新时，cache失效，所以不能保证自增序列的连续性。
+                            --cache要满足表达式： 
+
+                            select seq_auto_add.nextval from dual;
+                            CREATE TABLE ADD_TEST
+                            (
+                            ID INT,
+                            NAME VARCHAR2(16)
+                            )
+                            --插入序列的方式有多种
+                            --第一种逐条插入
+                            insert into table() values (seq_auto_add.nextval)
+                            --第二种触发器插入
+                            create or replace trigger tri_tablename
+                            before insert on ADD_TEST
+                            for each row
+                            begin
+                            select ADD_TEST.ID into :new.seq_auto_add from dual;
+                            end;
+
+    4. 索引: 为经常作为查询条件的列，创建索引，可以显著提高查询效率，但使用索引会降低update、delete、insert效率。 oracle中，会自动为主键和唯一约束的列创建索引。  
+                            create index on tablename(col1,col2...coln)
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-02</span><i class="fa fa-tag"></i><a class="tag" href="/tags/oracle/" title="oracle">oracle </a><span class="leancloud_visitors"></span><span>About 1250 words, 4 min 10 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/02/oracle基础/,劣质真心的Blog,oracle基础,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/" title="概念积累">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/02/2023-4-2-%E9%9A%8F%E7%AC%94/" title="博客搭建过程记录">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
