@@ -77,23 +77,27 @@
             停止容器：docker stop  容器ID
             重启容器：docker restart 容器ID
             通过docker help命令来查看。
+            
 </code></pre>
+<blockquote>
 <ol start="7">
-<li><p>以tomcat为例使用docker部署并运行tomcat  </p>
-<pre><code> //docker的默认目录为/var/lib/docker
- //镜像下载目录为 /docker/image/overlay2
- 1. docker search  tomcat: 版本信息
- 2. docker pull  下载查询出的tomcat-name镜像
- 3. docker images  查看镜像
- 4. docker run -d \   --后台运行，   -t为交互式运行
-               -p linux服务器端口：容器端口号 \  --内外映射
-               --name  给容器起名字
- 5. 查看tomcat运行情况，  curl  0.0.0.0：端口号 ，会返回一串前端的html页面信息
- 6. 查看容器运行状态： docker ps （-a）
- 7. 关闭容器： docker stop  container_id 
- 8. 删除容器： docker rm container_id  --可以用正则表达式或者管道函数，批量删除或者关闭容器
+<li>以tomcat为例使用docker部署并运行tomcat  </li>
+</ol>
+</blockquote>
+<pre><code>    //docker的默认目录为/var/lib/docker
+    //镜像下载目录为 /docker/image/overlay2
+    1. docker search  tomcat: 版本信息
+    2. docker pull  下载查询出的tomcat-name镜像
+    3. docker images  查看镜像
+    4. docker run -d \   --后台运行，   -t为交互式运行
+                  -p linux服务器端口：容器端口号 \  --内外映射
+                  --name  给容器起名字
+    5. 查看tomcat运行情况，  curl  0.0.0.0：端口号 ，会返回一串前端的html页面信息
+    6. 查看容器运行状态： docker ps （-a）
+    7. 关闭容器： docker stop  container_id 
+    8. 删除容器： docker rm container_id  --可以用正则表达式或者管道函数，批量删除或者关闭容器
 </code></pre>
-</li>
+<ol start="8">
 <li><p>容器资源分配问题</p>
 <pre><code> 创建容器时，可能要考虑内存泄漏，out-of-memory，因此 使用-m参数来设置分配内存大小
  
