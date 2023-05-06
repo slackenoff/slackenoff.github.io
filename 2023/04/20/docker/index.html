@@ -1,15 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>docker · 劣质真心的Blog</title><meta name="description" content="Docker采用客户端/服务器端架构, 使用远程API来管理和创建容器, 可以轻松的创建一个轻量级的, 可移植的容器. 
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>docker · 劣质真心的Blog</title><meta name="description" content="Docker采用客户端/服务器端架构, 使用远程API来管理和创建容器, 可以轻松的创建一个轻量级的, 可移植的容器.，它是一种容器技术。  容器：  容器是镜像的运行实体，是主机上运行的进程。  镜像：  镜像是一系列的只读文件，包含了容器运行时所有的基础文件和配置信息 ，是运行容器的基础。
 
 
-
-
-
-相较于虚拟机，docker的交付速度更快，资源消耗更低，基本没有性能损耗。
-
-
-    传统虚拟机是虚拟出一个主机硬件, 并且运行一个完整的操作系统, 然后在这个系统上"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>docker</a></h3></div><div class="post-content"><p><blockquote>
+"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>docker</a></h3></div><div class="post-content"><p><blockquote>
 <ol>
-<li>Docker采用客户端/服务器端架构, 使用远程API来管理和创建容器, 可以轻松的创建一个轻量级的, 可移植的容器. </li>
+<li>Docker采用客户端/服务器端架构, 使用远程API来管理和创建容器, 可以轻松的创建一个轻量级的, 可移植的容器.，它是一种容器技术。<br>  容器：  容器是镜像的运行实体，是主机上运行的进程。<br>  镜像：  镜像是一系列的只读文件，包含了容器运行时所有的基础文件和配置信息 ，是运行容器的基础。</li>
 </ol>
 </blockquote>
 <span id="more"></span>
@@ -26,12 +20,12 @@
 </code></pre>
 <blockquote>
 <ol start="3">
-<li>Docker的三大理念就是build, ship, run. </li>
+<li>Docker的三大理念就是build, ship, run.  一次构建，处处使用</li>
 </ol>
 </blockquote>
 <blockquote>
 <ol start="4">
-<li>Docker通过namespace和cgroup来提供容器的资源隔离与安全保障等, 所以Docker容器在运行时, 不需要类似虚拟机的额外资源开销, 因此可以大幅度提供资源利用率</li>
+<li>Docker通过namespace和cgroup来提供容器的资源隔离与安全保障等, 所以Docker容器在运行时, 不需要类似虚拟机的额外资源开销, 因此可以大幅度提供资源利用率。</li>
 </ol>
 </blockquote>
 <blockquote>
@@ -66,8 +60,8 @@
             或
             service docker start
     5.常见的Docker操作命令：
-            搜索仓库镜像：docker search 镜像名
-            拉取镜像：docker pull 镜像名       下载的镜像存放在 /var/lib/docker/image下
+            搜索仓库镜像：docker search --filter=stars=1000 镜像名
+            拉取镜像：docker pull 镜像名:tag       下载的镜像存放在 /var/lib/docker/image下
             查看正在运行的容器：docker ps
             查看所有容器：docker ps -a
             删除容器：docker rm container_id
@@ -92,10 +86,22 @@
     4. docker run -d \   --后台运行，   -t为交互式运行
                   -p linux服务器端口：容器端口号 \  --内外映射
                   --name  给容器起名字
+                  tomcat
     5. 查看tomcat运行情况，  curl  0.0.0.0：端口号 ，会返回一串前端的html页面信息
+            这里拿到了404，查看tomcat的webapps目录，发现没有静态资源。
+            执行： docker exec -it container_id /bin/bash  进入容器内部
+            执行： ls  查看容器目录下的文件夹
+            执行： ls webapps 查看静态资源
+            添加静态资源，查看到webapps.dist下有静态资源
+            切到tomcat目录下， cp ./webapps.dist/* ./webapps 将资源复制
+            exit 退出容器目录
+            重新curl
+
     6. 查看容器运行状态： docker ps （-a）
     7. 关闭容器： docker stop  container_id 
     8. 删除容器： docker rm container_id  --可以用正则表达式或者管道函数，批量删除或者关闭容器
+    9. 镜像打包： docker save 镜像名：版本号 &gt; 名称.tar
+    10.镜像加载:  docker load &lt; 镜像名.tar
 </code></pre>
 <ol start="8">
 <li><p>容器资源分配问题</p>
@@ -104,4 +110,4 @@
 </code></pre>
 </li>
 </ol>
-</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-20</span><i class="fa fa-tag"></i><a class="tag" href="/tags/docker/" title="docker">docker </a><span class="leancloud_visitors"></span><span>About 1042 words, 3 min 28 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/20/docker/,劣质真心的Blog,docker,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/05/04/Git%E6%95%99%E7%A8%8B/" title="Git教程">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/06/linux%E5%91%BD%E4%BB%A4/" title="linux命令">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-20</span><i class="fa fa-tag"></i><a class="tag" href="/tags/docker/" title="docker">docker </a><span class="leancloud_visitors"></span><span>About1273words, 4min14secread</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/20/docker/,劣质真心的Blog,docker,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/05/04/Git%E6%95%99%E7%A8%8B/" title="Git教程">Post Anterior</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/06/linux%E5%91%BD%E4%BB%A4/" title="linux命令">Próximo post</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
