@@ -50,4 +50,57 @@
 <blockquote>
 <p>nc 命令通常用于以下任务：<br>    1. 构造客户机-服务器模型，在服务器启动端口监听nc，在客户机上连接服务器的端口。<br>    2. 构建基本的数据传送模型。在连接的一端输入的任何信息都将输出到连接的另一端，并且可以轻松捕获输入和输出，以便模仿文件传送<br>    3. 端口扫描</p>
 </blockquote>
-</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-05-10</span><span class="leancloud_visitors"></span><span>About 1004 words, 3 min 20 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/05/10/网络汇总/,劣质真心的Blog,网络汇总,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/05/04/Git%E6%95%99%E7%A8%8B/" title="Git教程">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+<h1 id="网关与路由的介绍"><a href="#网关与路由的介绍" class="headerlink" title="网关与路由的介绍"></a>网关与路由的介绍</h1><blockquote>
+<p>须知： IP地址的网络标识和主机标识</p>
+</blockquote>
+<ol>
+<li>如果IP地址与子网掩码转换为2进制表示，做and运算，得出网络标识</li>
+<li>将子网掩码取反，与IP地址做and运算，得出主机标识</li>
+</ol>
+<p><em><strong>如果验证2个主机是不是在同一个网段，则网络标识要一致。</strong></em></p>
+<p>IP地址是一个32位的二进制数，它由网络ID和主机ID两部份组成，用来在网络中唯一的标识的一台计算机。</p>
+<p>网络ID用来标识计算机所处的网段；</p>
+<p>主机ID用来标识计算机在网段中的位置。</p>
+<p>IP地址通常用4组3位十进制数表示，中间用“.”分隔，比如，192.168.0.1</p>
+<p>可用IP数量 = 可用IP地址 + 2 （去掉子网网络网址和子网的广播地址）</p>
+<p>可用IP数量 = 主机标识的8位中，有x个0，就有2的x次方个地址</p>
+<ol>
+<li>网关<br> 网络有边界，即IP地址范围，在没有路由的情况下，网络间不能进行TCP/IP通信，即使它们连接在同一台交换机或集线器上<br> 要想在网络见进行TCP/IP通信，则必须通过网关 本地网络主机A与数据包指向的目的主机B不在同一网段，则通过网关通信<br> 通信方式为： <pre><code>         A向本地网络网关发送数据包
+         本地网络网关转发给目的主机所在网络的网关
+         目的主机所在网络的网关转发给B
+</code></pre>
+ 因此，需要设置好网关的IP地址，TCP/IP协议才能实现不能网络的相互通信 网关的IP地址可以是： <pre><code>                 具有路由功能的设备的IP地址
+                 具有路由功能的设备有路由器
+                 启用了路由协议的服务器
+                 代理服务器
+</code></pre>
+</li>
+</ol>
+<p>路由器： 负责寻径的网络设备，在互联网中寻找通讯量最骚的一条网络路径提供给用户通信，用于连接多个逻辑上分开的网络</p>
+<pre><code>    最佳的通信路径，路由器通过路由表为数据传输选择路径，按照最少时间算法或最右路径算法，利用路由表查找数据包从当前位置到目的地址的正确路径
+</code></pre>
+<blockquote>
+<p>查看本地路由表<br>    cmd ： route pri-vn  、 netstat -r 、 ip route show 效果是一样的</p>
+</blockquote>
+<pre><code>IP地址与子网掩码一一对应，计算一个IP地址的方法为：  
+IP地址的网络标识位占多少位，子网掩码就有多少位1，IP地址的主机标识占多少位，那么子网掩码就有多少位0.
+
+按照常规的网段分类，A,B,C...
+A类网段：  网络地址占1个字节，也就是8位； 范围为  1.0.0.1 - 126.255.255.254   其中 10.0.0.0 -10.255.255.255是私有网段，127.x.x.x是保留地址
+
+B类网段：  网络地址占2个字节，也就是16位； 范围位  128.0.0.1 - 191.31.255.255  其中 172.16.0.0 - 172.31.255.255是私有网段，169.254.x.x是保留地址
+
+C类网段：  网阔地址占3个字节，也就是24位； 范围为  192.0.0.1 - 223.255.255.254  其中 192.168.x.x是私有网段，
+
+
+组建局域网络要看设备的总数量，大于6万用A类地址，小于6W大于254按B类划分，否则按C类划分
+明确了地址类别，也就明确了网络地址和主机地址的位数，同时就可以得出子网掩码，如要建立可以分配520个主机的网络，则按B类地址划分，520介于2的9次方和2的10次方之间，向上取整，所以主机地址占10位，
+所以IP地址的主机位占10位，因此子网掩码的后10位为0，前22位为1，转换成10进制就是255.255.252.0
+
+分析两个主机是否在一个网段，前提是他们的子网掩码要一致。
+比较网络标识：    网络地址与子网掩码做与运算
+主机标识：  子网掩码取反与IP地址做与运算
+
+CIDR： 无类别域间路由   即 IP/n  意为前N位是网络标识，后（32-n）是主机可分配地址数量
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-05-10</span><span class="leancloud_visitors"></span><span>About 2120 words, 7 min 4 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/05/10/网络汇总/,劣质真心的Blog,网络汇总,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/05/04/Git%E6%95%99%E7%A8%8B/" title="Git教程">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

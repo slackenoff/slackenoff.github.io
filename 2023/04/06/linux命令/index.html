@@ -146,6 +146,54 @@
     -c：指定配置文件。
 </code></pre>
 <p>– 执行命令重现的一对命令： script 以及scriptreplay</p>
+<h1 id="网络配置与包管理"><a href="#网络配置与包管理" class="headerlink" title="网络配置与包管理"></a>网络配置与包管理</h1><blockquote>
+<p>要明确的基本问题</p>
+</blockquote>
+<pre><code>    1. 网络配置的内容有哪些？
+            IP地址
+            子网掩码
+            默认网关
+            dns
+            ...
+
+    2. 配置方式有哪些？
+            静态手工配置
+            DHCP服务动态获取
+
+    3. 实操
+            a) 了解常见的网络接口： 以太网接口eth、无线网络接口wlan、光纤分布式数据接口 fddi、点对点协议接口 ppp、本地回环接口  lo
+            b) 网络设备名： en 以太网设备、wl 无线局域网设备、ww 无线广域网设备
+            c) 硬件类型： o 主板板载设备、 s 热插拔插槽上的设备 、p pci总线或者usb接口上的设备
+         3.1 使用IP命令查看并更改IP网络地址
+                    ip addr show / ip a s  --查看全部接口的IP地址
+                    ip [-4/-6] a s [指定接口名]  --指定接口的IP地址 
+                    ip route show  --显示路由
+                    ip neighbor show  --显示arp缓存
+                    //修改IP地址
+                    ip addr  [add/del]  [ip地址]  dev [网络设备接口]
+                    //修改静态路由
+                    ip route [add/del] [主机地址] via [网关地址]  dev [网络设备接口]
+         3.2 配置TCP/IP网络
+            a) 配置文件的路径
+                    cat /etc/sysconfig/network-scripts/ifcfg-* 网络接口配置文件
+                            type： 接口类型
+                            defroute: 是否设置默认路由
+                            ipv4_failure_fatal  IPv4地址配置失效，及时IPv6配置正确也禁用该设备
+                            bootprotocol  获取网络参数的方式  dhcp、static、none
+
+                    cat /etc/sysconfig/network-scripts/route-* 路由配置文件
+                    cat /etc/hostname 本地主机名配置文件
+                    cat /etc/hosts  主机名与IP地址的映射关系
+                    cat /etc/metworks 域名与网络地址的映射
+                    cat /etc/host.conf   e.g.  multi on  域名服务的客户端控制文件
+                    cat /etc/resolv.conf  域名服务客户端的配置文件，用于指定服务器的位置
+                    cat /etc/protocols  查看支持的协议、协议的协议号
+                    cat /etc/services 查看支持的网络服务及其端口号
+
+                    包转发
+                    sysctl net.ipv4.ip_forward  --查看是否支持包转发,如果没有或者是0，改为1；
+                    
+</code></pre>
 <h1 id="centos重要的系统目录"><a href="#centos重要的系统目录" class="headerlink" title="centos重要的系统目录"></a>centos重要的系统目录</h1><pre><code>    1. cat /etc/os-release  查看系统版本
        hostnamectl  
        uname -a
@@ -354,4 +402,4 @@
 <h2 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h2><pre><code>    修改文件或目录的属主、属组
     chown -R user:group 文件/目录  修改属主、属组
 </code></pre>
-</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-06</span><i class="fa fa-tag"></i><a class="tag" href="/tags/linux/" title="linux">linux </a><span class="leancloud_visitors"></span><span>About 5005 words, 16 min 41 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/06/linux命令/,劣质真心的Blog,linux命令,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/04/20/docker/" title="docker">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/" title="概念积累">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-06</span><i class="fa fa-tag"></i><a class="tag" href="/tags/linux/" title="linux">linux </a><span class="leancloud_visitors"></span><span>About 5539 words, 18 min 27 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/06/linux命令/,劣质真心的Blog,linux命令,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/04/20/docker/" title="docker">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/" title="概念积累">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
