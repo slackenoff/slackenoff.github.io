@@ -103,7 +103,13 @@
     ！！     --执行【最近】一次执行的命令，也就是上一条命令
     ！[命令事件编号] --执行指定的历史命令
 </code></pre>
-<h1 id="包管理命令：apt、yum、dnf-fedora"><a href="#包管理命令：apt、yum、dnf-fedora" class="headerlink" title="包管理命令：apt、yum、dnf(fedora)"></a><strong>包管理命令：apt、yum、dnf(fedora)</strong></h1><h2 id="yum介绍"><a href="#yum介绍" class="headerlink" title="yum介绍"></a><strong>yum介绍</strong></h2><p><em><strong>yum</strong></em>是在<em><strong>Fedora</strong></em>和<em><strong>RedHat</strong></em>以及<em><strong>SUSE</strong></em>中<em><strong>基于rpm</strong></em>的软件包管理器，它可以使系统管理人员交互和自动化地更新与管理RPM软件包，<strong>能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</strong></p>
+<h1 id="包管理命令：rpm、apt、yum、dnf-fedora"><a href="#包管理命令：rpm、apt、yum、dnf-fedora" class="headerlink" title="包管理命令：rpm、apt、yum、dnf(fedora)"></a><strong>包管理命令：rpm、apt、yum、dnf(fedora)</strong></h1><pre><code>    包管理的功能大致归纳为5部分： 安装、卸载、升级、查询、验证
+    noarch： 表示已编译的代码与平台无关
+    epel： Extra Packages for Enterprise Linux。EPEL 是由 Fedora 社区打造，为 RHEL 及衍生发行版如 CentOS、Scientific Linux 等提供高质量软件包的项目。装上了 EPEL 之后，就相当于添加了一个第三方源。
+    epel、repoforge、remi、Nginx、ownCloud、oVirt、RDO 知名的非官方仓库，gpgcheck是出于下载安全考虑的，当存在需要使用非官方仓库的软件包时，认准有gpg签名的非官方仓库。
+    ***出处链接：https://www.jianshu.com/p/6a71714342e3***
+</code></pre>
+<h2 id="yum介绍yellow-dog-updater-modified"><a href="#yum介绍yellow-dog-updater-modified" class="headerlink" title="yum介绍yellow dog updater,modified"></a><strong>yum介绍</strong>yellow dog updater,modified</h2><p><em><strong>yum</strong></em>是在<em><strong>Fedora</strong></em>和<em><strong>RedHat</strong></em>以及<em><strong>SUSE</strong></em>中<em><strong>基于rpm</strong></em>的软件包管理器，它可以使系统管理人员交互和自动化地更新与管理RPM软件包，<strong>能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</strong></p>
 <h3 id="yum语法：-yum-选项-参数"><a href="#yum语法：-yum-选项-参数" class="headerlink" title="yum语法：  yum [选项]  [参数]"></a><em><strong>yum语法：  yum [选项]  [参数]</strong></em></h3><p>选项： </p>
 <pre><code>    -h：显示帮助信息；
     -y：对所有的提问都回答“yes”；
@@ -129,7 +135,9 @@
     localinstall：安装本地的rpm软件包；
     localupdate：显示本地rpm软件包进行更新；
     deplist：显示rpm软件包的所有依赖关系。
+    --installroot=path
 </code></pre>
+<p>常见用法：<br>        yum check-update  查看可更新的所有软件包<br>        yum update  下载更新已安装的所有软件包<br>        yum search name:version 查找软件包<br>        yum list installed  查看已安装的软件包<br>        yum info name  软件包详情<br>        yum install name  下载软件包<br>        yum update name 更新软件包<br>        yum remove  name 删除软件包<br>相关路径及操作：<br>        主配置文件：/etc/yum.conf   注： cachedir 缓存目录  logfile 日志文件路径<br>        官方仓库： base、updates、extras、cenosplus    配置文件/etc/yum.repos.d/*.repo<br>        启用或禁用仓库：<br>                        method1： 修改配置文件，enabled =0 / 1<br>                        method2： yum-config-manager –enable/disable repo_name<br>        了解： yum-plugin-fastestmirror插件是默认安装启动的，所以yum命令默认会从镜像地址列表中选择一个速度最快的镜像地址，并从该地址获取软件包</p>
 <h2 id="apt-get介绍"><a href="#apt-get介绍" class="headerlink" title="apt-get介绍"></a><strong>apt-get介绍</strong></h2><p>apt-get命令 是Debian Linux发行版中的APT软件包管理工具。所有基于Debian的发行都使用这个包管理系统。deb包可以把一个应用的文件包在一起，大体就如同Windows上的安装文件。</p>
 <p><em><strong>apt-get语法：apt-get [选项]</strong></em></p>
 <p>选项：</p>
@@ -192,7 +200,51 @@
 
                     包转发
                     sysctl net.ipv4.ip_forward  --查看是否支持包转发,如果没有或者是0，改为1；
-                    
+           3.3 nmcli  networkmanager是一项管理网络接口和配置网络连接的系统服务，控制管理工具包括GUI、TUI、Cli
+                    1. 显示所有网络接口设备的状态  nmcli -p  [device] [status]   
+                    2. 显示指定网络接口设备的状态  nmcli -p  device show ens33
+                    3. 断开设备连接且置非自动连接状态  nmcli device  disconnect ens33 
+                    4. 显示[激活的]所有连接  nmcli -p connection show [--active]
+                    5. 显示指定连接的信息   nmcli -p connection show ens33
+                    6. 激活指定网络接口上的连接 nmcli -p connection up id ens33
+                    7. 激活指定接口上的连接配置,适用于定义了多个连接配置的情况  nmcli -p connection up &quot;my connection&quot; ifname ens33  
+                    8. 重新加载连接配置   nmcli connection reload
+                    9. 修改IP地址获得方式  nmcli connection modify ens33 ipv4.method manaul  // nmcli connection modify ens33 ipv4.method auto
+                    10. 设置IP地址、网关和dns解析  nmcli -p connection modify ens33 ipv4.addresses 10.0.0.30/24  ipv4.gateway 10.0.0.1 ipv4.dns &quot;10.0.0.1 8.8.8.8&quot; 
+                    11. 添加或删除ipv4属性   nmcli connection modify ens33 +/-ipv4.addr/gateway/dns
+</code></pre>
+<h1 id="基础架构服务"><a href="#基础架构服务" class="headerlink" title="基础架构服务"></a>基础架构服务</h1><h2 id="守护进程和系统初始化"><a href="#守护进程和系统初始化" class="headerlink" title="守护进程和系统初始化"></a>守护进程和系统初始化</h2><pre><code>    1. 系统守护进程： dbus、crond、cups、rsyslogd...
+    2. 网络守护进程:  sshd、httpd、postfix、xinetd...
+</code></pre>
+<h2 id="初始化进程：-linux采用过3种初始化进程，sysVinit、Upstart、Systemd（centos7）"><a href="#初始化进程：-linux采用过3种初始化进程，sysVinit、Upstart、Systemd（centos7）" class="headerlink" title="初始化进程：  linux采用过3种初始化进程，sysVinit、Upstart、Systemd（centos7）"></a>初始化进程：  linux采用过3种初始化进程，sysVinit、Upstart、Systemd（centos7）</h2><h2 id="服务管理命令-systemctl-部分功能与service-命令等效"><a href="#服务管理命令-systemctl-部分功能与service-命令等效" class="headerlink" title="服务管理命令  systemctl  部分功能与service 命令等效"></a>服务管理命令  systemctl  部分功能与service 命令等效</h2><p>***********管理命令<br>        systemctl start   //启动服务<br>        systemctl stop    //停止服务<br>        systemctl restart //重启服务<br>        systemctl status  // 查看服务运行状态<br>        systemctl reload  // 重新加载服务配置文件<br>        systemctl is-active  // 查看服务是否正在运行<br>        systemctl –type service –failed  //查看已加载但处于failed状态的服务<br>        systemctl -at service // 显示所有服务<br>***********持久化命令<br>        systemctl enable //在系统启动时启用服务<br>        systemctl disable //在系统启动时停用服务<br>        systemctl list-unit-files –type service //查看服务的启停配置， static 灰、 enable  绿、disable  红</p>
+<h2 id="计划任务-cron、at、batch"><a href="#计划任务-cron、at、batch" class="headerlink" title="计划任务   cron、at、batch"></a>计划任务   cron、at、batch</h2><pre><code>    at：  一次性任务    在指定时间执行一次
+    batch： 一次性任务  在系统负载不重时执行一次
+    cron： 周期性任务  周期性计划任务
+</code></pre>
+<p>–cronie软件提供周期性计划任务服务，由cronie、cronie-anacron、crontabs 3部分组成<br>        cronie： 提供crond守护进程及其配置目录 /etc/cron.d，以及crontab命令<br>        cronie-aracron：提供由crond调用的anacron程序及其配置文件/etc/anacrontab<br>        crontabs：提供run-parts脚本以及依赖此脚本的系统计划任务配置文件/etc/crontab和配置目录/etc/cron.{daily,weekly,monthly}<br>–crond进程工作原理<br>        crond进程有内部计时器，每一分钟唤醒一次进程，检测文件变化并加载到内存中，具体文件为：<br>                1. /etc/crontab<br>                2. /etc/cron.d/*<br>                3. /var/spool/cron/*   //用户自定义定时任务目录<br>                4. /etc/anacrontab<br>        如果上述文件中的cron任务的时间和日期与系统当前时间和日期符合，执行对应的cron任务，任务执行结束后，输出将以邮件的形式发送给安排cron任务的用户，或者配置文件中mailto指定的用户<br>注： 因为crond进程每分钟自动检测，所以对配置文件或目录的修改，不需要reload或者restart</p>
+<p>crontab文件格式：  [分]  [时]  [日]  [月] [周]  [用户名] [命令]   共计7个字段<br>        分： 0-59<br>        时： 0-23<br>        日： 1-31<br>        月： 1-12<br>        周： 0-7   0，7都指周日<br>注:  <strong><em>多个值用【，】分割； 范围用【-】指定；范围步长用 【/n】表示；[</em>]代表任何时间，每个字段均不能为空</strong>*</p>
+<p>–cron任务的创建及权限<br>        /etc/cron.allow  //如果存在，则只有文件中用户可以使用cron<br>        /etc/cron.deny   //如果存在，则文件中的用户不能使用cron<br>        crontab -e<br>        注： root用户不受约束<br>注： 环境变量 ： path  shell 解释器  mailto 指定用户<br>        cat /etc/crontab  [* * * * * * * root cmd]<br>        cat /etc/cron.d/0hourly 同上<br>        cd /etc/cron.{daily,weekly,monthly} 在目录下放要执行的脚本<br>–anacrontab<br>        /etc/anacrontab文件配置非周期性任务</p>
+<h1 id="网络测试工具"><a href="#网络测试工具" class="headerlink" title="网络测试工具"></a>网络测试工具</h1><pre><code>    1. ping 命令
+            测试网络连通性，发送icmp请求包  || ICMP是一个网络层协议。用来检测IP报文是否能够正常发送，并反馈发送出错原因，以及查询主机的信息，也就是差错查询和信息查询
+                    ping  域名
+                    ping  ip地址
+    2. ss 命令  显示套接字统计信息
+            ss -l 显示本地监听的socket
+            ss -t 显示建立连接的tcp socket 
+            ss -u 显示建立连接的udp socket
+    3. lsof 命令  查看端口的进程，需要下载，不是内置的  yum search lsof  || yum install -y lsof
+            lsof -i :22
+    4. traceroute 命令  不是内置命令，需要下载
+            显示数据包到达目的主机所经过的路由
+    5. dig命令，可以测试dns服务器是否能正常工作
+</code></pre>
+<h1 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h1><pre><code>    ftp工具：  lftp
+    wget下载工具
+    links/w3m 字符界面浏览器
+    远程数据同步工具：rsync  ，运行原理，首次同步时，全量同步，之后增量同步
+    远程登录： ssh
+    本地与远程主机间文件复制： scp
+    sftp加密会话
 </code></pre>
 <h1 id="centos重要的系统目录"><a href="#centos重要的系统目录" class="headerlink" title="centos重要的系统目录"></a>centos重要的系统目录</h1><pre><code>    1. cat /etc/os-release  查看系统版本
        hostnamectl  
@@ -402,4 +454,71 @@
 <h2 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h2><pre><code>    修改文件或目录的属主、属组
     chown -R user:group 文件/目录  修改属主、属组
 </code></pre>
-</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-06</span><i class="fa fa-tag"></i><a class="tag" href="/tags/linux/" title="linux">linux </a><span class="leancloud_visitors"></span><span>About 5539 words, 18 min 27 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/06/linux命令/,劣质真心的Blog,linux命令,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/04/20/docker/" title="docker">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/" title="概念积累">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+<h1 id="系统日常维护软件包及命令"><a href="#系统日常维护软件包及命令" class="headerlink" title="系统日常维护软件包及命令"></a>系统日常维护软件包及命令</h1><pre><code>    htop包：  动态显示系统进程任务
+    procps包： 
+    nload包
+    iotop包
+    sysstat包
+</code></pre>
+<blockquote>
+<p>top 动态显示当前正运行的进程  tasks（运行中、睡眠、中止、僵尸进程）及其重要信息，包括内存和cpu占用</p>
+</blockquote>
+<pre><code>    top 标准输出包括两部分：  统计信息、进程信息
+            统计信息： 
+                    第一行 top - 之后显示的是uptime的输出，依次为： 当前时间、系统运行时间、登录用户数、平均负载（依次为1，5，15min）
+                    第二行 进程数统计及其状态
+                    第三行 内存和交换分区信息
+
+
+            进程信息：
+                    pid  进程号
+                    user 所有者
+                    pr 优先级，越小优先级越高
+                    ni 进程nice值，负值代表高优先级   正值代表低优先级
+                    virt 进程占用虚拟内存  kb  swap + res
+                    res  进程使用，且未被唤出的物理内存大小  kb  code+data
+                    shr 共享内存   kb
+                    s 进程状态  d 不可中断的睡眠状态  r 运行 s 睡眠  t 跟踪/停止  z 僵尸进程
+                    %cpu 
+                    %mem 物理内存占比
+                    time+command
+</code></pre>
+<blockquote>
+<p>uptime 显示系统平均负载</p>
+</blockquote>
+<blockquote>
+<p>vmstat 显示进程队列、内存、交换分区、块设备io以及cpu活跃信息</p>
+</blockquote>
+<pre><code>    r 运行队列中等待运行的进程数
+    b 等待 i/o的进程数
+    swpd 交换空间
+    free 空闲的物理内存
+    buff 缓冲内存
+    cache 缓存的内存
+    inact 不活跃内存
+    active 活跃内存
+    si 每秒从交换区写到内存的大小
+    so 每秒写到交换区的内存大小
+    bi 每秒读取块设备的块数
+    bo 每秒写入块设备的快数
+    in 每秒中断数
+    cs 每秒的上下文切换次数
+    us 用户进程执行时间的百分比
+    sy 系统进程执行时间百分比
+    id 空闲时间百分比
+    wa  等待i/o时间的百分比
+    st 管理程序为另一个虚拟进程提供服务而等待虚拟cpu的百分比
+</code></pre>
+<blockquote>
+<p> 分析系统状态的一些标准</p>
+</blockquote>
+<pre><code>    **cpu**：平均负载，n个cpu，若平均负载小于n，则cpu空闲，反之繁忙
+             核心态和用户态进程执行时间占比&lt;70%，则视为状态良好，若&gt; 90%，表示cpu资源吃紧
+             若id&lt; 10% ，表示cpu性能较低，需要改善
+</code></pre>
+<h1 id="数据备份"><a href="#数据备份" class="headerlink" title="数据备份"></a>数据备份</h1><pre><code>    备份方式： 全量备份、增量备份、差分备份
+    备份周期： 每月全量、每天增量、每周差分
+
+    注意点： 备份需要定期验证； 备份应当与源主机分离
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-06</span><i class="fa fa-tag"></i><a class="tag" href="/tags/linux/" title="linux">linux </a><span class="leancloud_visitors"></span><span>About 7972 words, 26 min 34 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/06/linux命令/,劣质真心的Blog,linux命令,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/04/20/docker/" title="docker">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/" title="概念积累">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
