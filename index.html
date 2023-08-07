@@ -1,5 +1,281 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>劣质真心的Blog</title><meta name="description" content="少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a class="current" href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/05/10/%E7%BD%91%E7%BB%9C%E6%B1%87%E6%80%BB/">网络汇总</a></h3></div><div class="post-content"><div class="card"><p><p>熟悉网络模型及数据在网络模型各层间传递的方式</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-05-10</span><span class="leancloud_visitors"></span><span>About 2120 words, 7 min 4 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/05/04/Git%E6%95%99%E7%A8%8B/">Git教程</a></h3></div><div class="post-content"><div class="card"><p><h1 id="为什么要用版本控制"><a href="#为什么要用版本控制" class="headerlink" title="为什么要用版本控制"></a>为什么要用版本控制</h1></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-05-04</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Git，版本控制/" title="Git，版本控制">Git，版本控制 </a><span class="leancloud_visitors"></span><span>About 606 words, 2 min 1 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/20/docker/">docker</a></h3></div><div class="post-content"><div class="card"><p><blockquote>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>劣质真心的Blog</title><meta name="description" content="少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a class="current" href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/07/12/springboot/">springboot</a></h3></div><div class="post-content"><div class="card"><p><h1 id="1-什么是springboot，与-hibernate、struts并列java主流框架"><a href="#1-什么是springboot，与-hibernate、struts并列java主流框架" class="headerlink" title="1. 什么是springboot，与 hibernate、struts并列java主流框架"></a>1. 什么是springboot，与 hibernate、struts并列java主流框架</h1><pre><code>    springboot是由pivotal团队在spring基础上推出的开源框架，为了简化spring应用的搭建和开发过程
+
+    1.1 springboot的特点：
+            1. Create stand-alone Spring applications
+            2. Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)
+            3. Provide opinionated &#39;starter&#39; dependencies to simplify your build configuration
+            4. Automatically configure Spring and 3rd party libraries whenever possible
+            5. Provide production-ready features such as metrics, health checks, and externalized configuration
+            6. Absolutely no code generation and no requirement for XML configuration
+            
+    1.2 springboot的依赖管理
+           
+         场景启动器：  命名如：  springboot-starter-xxx
+
+            1. 依赖传递   
+            
+                    A 依赖B，B依赖C， 则A同时拥有B和C，场景启动器会自动把这个场景需要的核心依赖全部导入
+
+            2. 依赖的版本管理
+                    每个boot项目都有parent项目
+                    parent项目的父项目是spring-boot-dependncis
+                    spring-boot-dependncies会把所有的依赖版本都声明好
+               如果需要修改版本，
+                    可以自行通过properties声明
+               或者
+                    可以直接在dependencies导入配置中修改版本
+            
+    1.3 springboot的自动配置机制
+            1. 自动配置tomcat、springmvc
+                    容器中有了什么组件，就有什么功能
+            2. 默认的包扫描规则
+                    springboot只会扫描主程序所在的包及其下面的子包
+               或者
+                    可以自定义扫描路径，解决与主程序不在同级包下导致的功能无法正常访问问题
+                            scanBasePackage = “”
+                            @componentScan（“”）
+            3. 默认配置值
+                    如端口默认是8080
+                    配置项是和某个类的对象值进行一一绑定的
+            4. 按需加载配置
+                    导入什么场景，则配置哪些场景所需要的包
+</code></pre>
+<h1 id="2-搭建一个简单的应用"><a href="#2-搭建一个简单的应用" class="headerlink" title="2. 搭建一个简单的应用"></a>2. 搭建一个简单的应用</h1><h2 id="下载spring-boot-extension-pack，鄙人用的vscode-所以就直接无脑上插件。"><a href="#下载spring-boot-extension-pack，鄙人用的vscode-所以就直接无脑上插件。" class="headerlink" title="下载spring boot extension pack，鄙人用的vscode,所以就直接无脑上插件。"></a>下载spring boot extension pack，鄙人用的vscode,所以就直接无脑上插件。</h2><h2 id="按照spring-initializer-java-support插件的指导，执行命令，生成springboot项目模板"><a href="#按照spring-initializer-java-support插件的指导，执行命令，生成springboot项目模板" class="headerlink" title="按照spring initializer java support插件的指导，执行命令，生成springboot项目模板"></a>按照spring initializer java support插件的指导，执行命令，生成springboot项目模板</h2><h2 id="这里是执行的命令"><a href="#这里是执行的命令" class="headerlink" title="这里是执行的命令"></a>这里是执行的命令</h2><pre><code>    1. ctrl+shift+P   进入全局搜索
+    2. spring initializer  创建项目 
+</code></pre>
+<h2 id="下载jdk，配置环境变量"><a href="#下载jdk，配置环境变量" class="headerlink" title="下载jdk，配置环境变量"></a>下载jdk，配置环境变量</h2><pre><code>    1.  oracle.com   resource-》developer download -》 java   -》 java jdk for developer
+    2.  下载安装包，一路next
+    3.  配置环境变量  
+            3.1  new 系统变量   name： java_home  variable: 下载目录
+            3.2  path          新建路径：  %java_home%\bin
+            3.3  测试配置是否正确，  cmd  java -version，输出版本即配置完成
+</code></pre>
+<h1 id="3-springboot的框架结构"><a href="#3-springboot的框架结构" class="headerlink" title="3. springboot的框架结构"></a>3. springboot的框架结构</h1><pre><code>    1. 配置文件，文件名是固定的，在springboot启动时自动读取，修改spring boot自动配置的默认值
+            application.property
+            application.yml
+       补充说明，常见的配置文件格式有： json、xml、yaml
+            ** YAML 全称 YAML Ain&#39;t Markup Language，它是一种以数据为中心的标记语言，比 XML 和 JSON 更适合作为配置文件
+                    yaml的语法：
+                            1. 大小写敏感
+                            2. 缩进表示层级关系
+                            3. 同级元素必须左对齐
+                    yaml的书写格式：
+                            1. 字面量  
+                                    name: [空格]proprty
+                            2. 对象
+                                写法一：    name:
+                                                    name: xxx
+                                                    url: xxx
+                                写法二：     name: &#123;name: xxx,url:xxx&#125;
+                            3. 数组
+                                写法一：    name:
+                                                    -dog
+                                                    -cat
+                                                    -monkey
+                                写法二：     name: &#123;dog,cat,monkey&#125;    
+                    yaml的分行符：  ---
+                            一个yaml文件可以由一个或多个文档组成，文档之间用---作为分隔符，各文档相互独立，互不干扰。
+    2. src  **主程序**
+         
+         including： java文件
+         其中
+            Application.java  有声明@SpringBootApplication的java文件是程序的入口
+
+    3. resource **静态资源static、页面 templates**
+
+         including：   
+            static放访问的静态资源
+            templates放页面模板
+            application.properties 
+</code></pre>
+<h1 id="4-servlet-容器"><a href="#4-servlet-容器" class="headerlink" title="4. servlet 容器"></a>4. servlet 容器</h1><pre><code>    springboot支持  tomcat、jetty以及undertow
+</code></pre>
+<h1 id="demo编写过程中遇到的问题"><a href="#demo编写过程中遇到的问题" class="headerlink" title="demo编写过程中遇到的问题"></a>demo编写过程中遇到的问题</h1><pre><code>    1. build引入依赖过程中，存在依赖冲突，导致不能运行项目，
+            报错为：failed to determine a suitable driver class 
+    2. 在修改配置文件的路径时，因 / 和 \ 问题报错
+            报错为：invalid escape character in string
+            解决办法： /改为 \  或者 //
+    3. 注解无法引入
+            报错： xx  cannot be resovled
+            原因：没有在pom中引入依赖，配置dependency后rebuild  pom即可
+    4. controller与启动类目录关系
+            报错： whitelabel error page
+            现象： web服务器界面不能正常响应
+            原因： controller要与启动类在同级目录下，否则无法正常读取
+    5. pom修改后，引入依赖特别慢，查看了相关资料，与国外网址有关，要修改下载地址
+            存疑： vscode怎么修改maven的setting.xml
+            
+</code></pre>
+</p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-07-12</span><span class="leancloud_visitors"></span><span>About 1096 words, 3 min 39 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/06/29/%E5%88%9D%E7%AA%A5mysql/">初窥mysql</a></h3></div><div class="post-content"><div class="card"><p><h1 id="参考手册-https-dev-mysql-com-doc-refman-8-0-en-database-use-html-以下英语内容取自官方文档，请读者自行理解"><a href="#参考手册-https-dev-mysql-com-doc-refman-8-0-en-database-use-html-以下英语内容取自官方文档，请读者自行理解" class="headerlink" title="参考手册  https://dev.mysql.com/doc/refman/8.0/en/database-use.html  以下英语内容取自官方文档，请读者自行理解"></a>参考手册  <a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/database-use.html">https://dev.mysql.com/doc/refman/8.0/en/database-use.html</a>  以下英语内容取自官方文档，请读者自行理解</h1><h1 id="下载地址-community版本-https-dev-mysql-com-downloads-练手用，所以选择了server-only，之后用dbeaver连接-记得配一下环境变量"><a href="#下载地址-community版本-https-dev-mysql-com-downloads-练手用，所以选择了server-only，之后用dbeaver连接-记得配一下环境变量" class="headerlink" title="下载地址  community版本   https://dev.mysql.com/downloads/  练手用，所以选择了server only，之后用dbeaver连接,记得配一下环境变量"></a>下载地址  community版本   <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/">https://dev.mysql.com/downloads/</a>  练手用，所以选择了server only，之后用dbeaver连接,记得配一下环境变量</h1><h1 id="command-line-下的使用"><a href="#command-line-下的使用" class="headerlink" title="command line 下的使用"></a>command line 下的使用</h1><pre><code>    连接  ：  mysql -h localhost -u root -p  // -h mysql server地址，-u  用户  ， -p 端口  默认3306
+
+    查看db：  show databases;   by default  1.information_schema,2.mysql,3.performance_schema,4.sys 
+
+    使用db：  use  db_name; 如果有，则database changed，否则  1049（42000） unknown database &#39;db_name&#39;
+
+    查看tables：  show tables;  
+</code></pre>
+<h1 id="mysql-入门"><a href="#mysql-入门" class="headerlink" title="mysql 入门"></a>mysql 入门</h1><h2 id="1-基本数据类型-literal-values"><a href="#1-基本数据类型-literal-values" class="headerlink" title="1   基本数据类型 literal values"></a>1   基本数据类型 literal values</h2><pre><code>    1.1 string： A string is a sequence of bytes or characters, enclosed within either single quote (&#39;) or double quote (&quot;) characters  //  单引号或双引号括起来的一组字母
+
+    1.2 numeric：Number literals include exact-value (integer and DECIMAL) literals and approximate-value (floating-point) literals. // 整型、浮点型
+    
+    1.3 date and time：Date and time values can be represented in several formats, such as quoted strings or as numbers, depending on the exact type of the value and other factors. For example, in contexts where MySQL expects a date, it interprets any of &#39;2015-07-21&#39;, &#39;20150721&#39;, and 20150721 as a date. 
+    
+    //时间或日期类型对格式要求不高，但需要是有效的年月日，年份前2位可以省略。
+    //月份、日期及时间必须是有效的，否则会视作&quot;0000-00-00 00：00：00&quot;  .  
+    //yyyy-mm-ddThh24:hh:ss  用大写的T 而不是空格来分割年份与时间
+    //不按规范书写会报warning或者导致错误
+    Dates containing two-digit year values are ambiguous because the century is unknown. MySQL interprets two-digit year values using these rules:
+
+    Year values in the range 70-99 become 1970-1999.
+
+    Year values in the range 00-69 become 2000-2069.
+
+    1.4 hexadecimal：Hexadecimal literal values are written using X&#39;val&#39; or 0xval notation, where val contains hexadecimal digits (0..9, A..F). Lettercase of the digits and of any leading X does not matter. A leading 0x is case-sensitive and cannot be written as 0X.
+
+    1.5 bit-value：Bit-value literals are written using b&#39;val&#39; or 0bval notation. val is a binary value written using zeros and ones. Lettercase of any leading b does not matter. A leading 0b is case-sensitive and cannot be written as 0B.
+
+    1.6 boolean：The constants TRUE and FALSE evaluate to 1 and 0, respectively. The constant names can be written in any lettercase.
+
+    1.7 null：The NULL value means “no data.” NULL can be written in any lettercase.
+</code></pre>
+<blockquote>
+<p>dbeaver连接mysql出现的问题<br>    问题1： public key retrieval is not allowed<br>    解决办法：  编辑连接》驱动属性》 allowpublicretrieval  设置为true</p>
+</blockquote>
+<pre><code>问题2： Access denied for user 
+解决办法：  use  mysql； select host,user from user; 更改root的host为%  ，意为任意IP可以root权限访问。
+</code></pre>
+<h2 id="2-sql语法"><a href="#2-sql语法" class="headerlink" title="2  sql语法"></a>2  sql语法</h2><pre><code>    select   
+    from
+    where
+    group by
+    having
+    order by 
+    limit 
+
+2.1 Data Definition Statements ——————————————————create、alter、drop
+    warning: Atomic DDL is not transactional DDL. DDL statements, atomic or otherwise, implicitly end any transaction that is active in the current session, as if you had done a COMMIT before executing the statement. This means that DDL statements cannot be performed within another transaction, within transaction control statements such as START TRANSACTION ... COMMIT, or combined with other statements within the same transaction.
+
+    The atomic DDL feature supports both table and non-table DDL statements. 
+    Table-related DDL operations require storage engine support, whereas non-table DDL operations do not. Currently, only the InnoDB storage engine supports atomic DDL.
+
+    **Supported table DDL statements** include CREATE, ALTER, and DROP statements for databases, tablespaces, tables, and indexes, and the TRUNCATE TABLE statement.
+
+    **S**upported non-table DDL statements** include:
+
+    CREATE and DROP statements, and, if applicable, ALTER statements for stored programs, triggers, views, and loadable functions.
+
+    Account management statements: CREATE, ALTER, DROP, and, if applicable, RENAME statements for users and roles, as well as GRANT and REVOKE statements.
+
+2.2 Data Manipulation Statements ——————————————call、delete、do、except、handler、import、insert、intersect、replace、select、update
+
+    2.2.1 The CALL statement invokes a stored procedure that was defined previously with CREATE PROCEDURE.  //调用预定义的存储过程
+    
+
+
+2.3 Transactional and Locking Statements
+2.4 Replication Statements
+2.5 Prepared Statements
+2.6 Compound Statement Syntax
+2.7 Database Administration Statements
+2.8 Utility Statements
+</code></pre>
+</p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-06-29</span><span class="leancloud_visitors"></span><span>About 881 words, 2 min 56 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/06/19/%E8%8B%B1%E8%AF%AD%E6%8B%93%E5%B1%95/">英语拓展</a></h3></div><div class="post-content"><div class="card"><p><blockquote>
+<p>本文旨在提供日常英语，拓展用</p>
+</blockquote></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-06-19</span><span class="leancloud_visitors"></span><span>About 358 words, 1 min 11 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/05/10/%E7%BD%91%E7%BB%9C%E6%B1%87%E6%80%BB/">网络汇总</a></h3></div><div class="post-content"><div class="card"><p><p>熟悉网络模型及数据在网络模型各层间传递的方式</p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-05-10</span><span class="leancloud_visitors"></span><span>About 2120 words, 7 min 4 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/05/04/Git%E6%95%99%E7%A8%8B/">Git教程</a></h3></div><div class="post-content"><div class="card"><p><h1 id="为什么要用版本控制"><a href="#为什么要用版本控制" class="headerlink" title="为什么要用版本控制"></a>为什么要用版本控制</h1></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-05-04</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Git，版本控制/" title="Git，版本控制">Git，版本控制 </a><span class="leancloud_visitors"></span><span>About 606 words, 2 min 1 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/20/docker/">docker</a></h3></div><div class="post-content"><div class="card"><p><blockquote>
 <ol>
-<li>Docker采用客户端/服务器端架构, 使用远程API来管理和创建容器, 可以轻松的创建一个轻量级的, 可移植的容器.，它是一种容器技术。<br>  容器：  容器是镜像的运行实体，是主机上运行的进程。<br>  镜像：  镜像是一系列的只读文件，包含了容器运行时所有的基础文件和配置信息 ，是运行容器的基础。</li>
+<li>Docker采用客户端/服务器端架构, 使用远程API来管理和创建容器, 可以轻松的创建一个轻量级的, 可移植的容器.，它是一种容器技术。<br>  容器：  容器是镜像的运行实体，是主机上运行的进程。<br>  镜像：  镜像是一系列的只读文件，包含了容器运行时所有的基础文件和配置信息 ，是运行容器的基础。<br>  仓库：  存放镜像文件的存储单元</li>
 </ol>
-</blockquote></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-20</span><i class="fa fa-tag"></i><a class="tag" href="/tags/docker/" title="docker">docker </a><span class="leancloud_visitors"></span><span>About 1273 words, 4 min 14 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/06/linux%E5%91%BD%E4%BB%A4/">linux命令</a></h3></div><div class="post-content"><div class="card"><p><h1 id="linux是助推器，影响个人在IT赛道上的speed"><a href="#linux是助推器，影响个人在IT赛道上的speed" class="headerlink" title="linux是助推器，影响个人在IT赛道上的speed"></a>linux是助推器，影响个人在IT赛道上的speed</h1><p>推荐一个我认为比较实用的查询网站<a target="_blank" rel="noopener" href="https://wangchujiang.com/linux-command/">linux命令搜索</a></p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-06</span><i class="fa fa-tag"></i><a class="tag" href="/tags/linux/" title="linux">linux </a><span class="leancloud_visitors"></span><span>About 7972 words, 26 min 34 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/">概念积累</a></h3></div><div class="post-content"><div class="card"><p><h1 id="概念1-中心化与去中心化"><a href="#概念1-中心化与去中心化" class="headerlink" title="概念1 中心化与去中心化"></a><strong>概念1 中心化与去中心化</strong></h1></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-03</span><i class="fa fa-tag"></i><a class="tag" href="/tags/概念相关/" title="概念相关">概念相关 </a><span class="leancloud_visitors"></span><span>About 585 words, 1 min 57 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/02/oracle%E5%9F%BA%E7%A1%80/">oracle基础</a></h3></div><div class="post-content"><div class="card"><p><h1 id="oracle简介"><a href="#oracle简介" class="headerlink" title="oracle简介"></a><strong>oracle简介</strong></h1></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-02</span><i class="fa fa-tag"></i><a class="tag" href="/tags/oracle/" title="oracle">oracle </a><span class="leancloud_visitors"></span><span>About 2025 words, 6 min 45 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/02/2023-4-2-%E9%9A%8F%E7%AC%94/">博客搭建过程记录</a></h3></div><div class="post-content"><div class="card"><p><h1 id="记录下hexo-github博客搭建过程"><a href="#记录下hexo-github博客搭建过程" class="headerlink" title="记录下hexo+github博客搭建过程"></a><strong>记录下hexo+github博客搭建过程</strong></h1></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-02</span><i class="fa fa-tag"></i><a class="tag" href="/tags/环境搭建类/" title="环境搭建类">环境搭建类 </a><span class="leancloud_visitors"></span><span>About 420 words, 1 min 24 sec  read</span></div></div></div></div><div class="pagination"><ul class="clearfix"></ul></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+</blockquote></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-20</span><i class="fa fa-tag"></i><a class="tag" href="/tags/docker/" title="docker">docker </a><span class="leancloud_visitors"></span><span>About 1342 words, 4 min 28 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/06/linux%E5%91%BD%E4%BB%A4/">linux命令</a></h3></div><div class="post-content"><div class="card"><p><h1 id="linux是助推器，影响个人在IT赛道上的speed"><a href="#linux是助推器，影响个人在IT赛道上的speed" class="headerlink" title="linux是助推器，影响个人在IT赛道上的speed"></a>linux是助推器，影响个人在IT赛道上的speed</h1><p>推荐一个我认为比较实用的查询网站<a target="_blank" rel="noopener" href="https://wangchujiang.com/linux-command/">linux命令搜索</a></p></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-06</span><i class="fa fa-tag"></i><a class="tag" href="/tags/linux/" title="linux">linux </a><span class="leancloud_visitors"></span><span>About 7972 words, 26 min 34 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/">概念积累</a></h3></div><div class="post-content"><div class="card"><p><h1 id="概念1-中心化与去中心化"><a href="#概念1-中心化与去中心化" class="headerlink" title="概念1 中心化与去中心化"></a><strong>概念1 中心化与去中心化</strong></h1></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-03</span><i class="fa fa-tag"></i><a class="tag" href="/tags/概念相关/" title="概念相关">概念相关 </a><span class="leancloud_visitors"></span><span>About 616 words, 2 min 3 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/02/oracle%E5%9F%BA%E7%A1%80/">oracle基础</a></h3></div><div class="post-content"><div class="card"><p><h1 id="oracle的认证证书（oracle-database-management）"><a href="#oracle的认证证书（oracle-database-management）" class="headerlink" title="oracle的认证证书（oracle database management）"></a><strong>oracle的认证证书（oracle database management）</strong></h1><pre><code>    OCA  Oracle Certified Associate
+    OCP  Oracle Certified Professional
+    OCM  Oracle Certified Master
+</code></pre>
+<h1 id="oracle官方入门教程的sql学习路径"><a href="#oracle官方入门教程的sql学习路径" class="headerlink" title="oracle官方入门教程的sql学习路径"></a><strong>oracle官方入门教程的sql学习路径</strong></h1><pre><code>    1. retrieving data using the sql select statement
+    2. restricting and sorting data
+    3. using single-row functions to customize output
+    4. using Conversion functions and conditional expressions
+    5. reporting aggregated data using the group functions
+    6. display data from  multiple tables using joins
+    7. using subqueries to solve  queries
+    8. using set operators
+    9. managing tables using DML statements
+    10. introduction to data definition language
+    11. introduction to data dictionary views
+    12. creating sequences,synonyms and indexes
+    13. creating view
+    14. managing schema objects
+    15.retrieve data by using subqueries
+    16. manipulating data by using subqueries
+    17. controlling user access
+    18. manipulating data using advanced queries
+    19. managing data in different time zones
+</code></pre>
+<h1 id="oracle数据库管理与维护"><a href="#oracle数据库管理与维护" class="headerlink" title="oracle数据库管理与维护"></a><strong>oracle数据库管理与维护</strong></h1><pre><code>   1. 系统权限与实体权限
+            系统权限： 规定用户对数据库的使用权限
+            实体权限： 规定用户对数据库对象，如表、视图等的存取权限
+    1.1  账号创建、删除与授权（系统权限）
+
+            create user username identified by pwd；  // username，pwd  分别为要创建的用户及登录密码；
+            grant connect,resource,dba to username;   //授予数据库对象访问对象、创建数据库实体、创建数据库结构
+            drop user usename cascade  //  删除用户及所有由用户创建的的对象；
+
+    1.2  查看用户权限（系统权限）       
+            select * from dba_role_privs;
+            select * from dba_sys_privs;
+            select * from role_sys_privs; 
+    
+    1.3 权限传递（系统权限）
+            grant connect/resource/dba to  username with admin option   //可以传递所获得的权限；
+
+            补充：  若A授予B权限，则B可以将拥有的权限授予C； 如果B的权限被收回，B授予C的权限不会被收回，但A可以越过B收回C的权限；
+    
+    1.4 权限回收（系统权限）
+            revoke connect/resource/dba from  username;
+    
+    1.5 select/update/insert/delete/alter/index/execute/regerences   具体操作与系统权限几乎没有差异，唯一不同就是权限的回收是级联的。
+
+    1.6 情景模拟： 创建一个用户，允许传递权限，授予connect/resource/dba权限；
+            create user con1 identified by &quot;123456&quot;;
+            grant connect to con1  with admin option;
+            show  user;
+            conn con1/123456;
+            show user;
+    
+    1.7 触发的报错：
+            ORA-01045: user CON1 lacks CREATE SESSION privilege; logon denied；
+            ORA-01919: role &#39;RESOUCE&#39; does not exist
+            ORA-01924: role &#39;CONCECT&#39; not granted or does not exist
+            ORA-01031: insufficient privileges
+    
+    1.8 用户profile管理    profiles文件是口令和资源限制的配置集合，查看DBA_PROFILES表以了解详细信息；
+            主要包括： kernal type指resource_parameter；  password  type指password_parameter
+                    COMPOSITE_LIMIT   --单个会话中，总资源消耗  默认unlimited
+                    SESSIONS_PER_USER --限制用户的并发会话数目  默认unlimited 
+                    CPU_PER_SESSION --会话的cpu时间限制，单位为1/100秒  默认unlimited
+                    CPU_PER_CALL --依次调用/解析/执行/提取的cpu时间限制，单位为1/100秒，默认unlimited
+                    LOGICAL_READS_PER_SESSION --指定一个个会话允许读的数据块的数目，包括从内存和磁盘读取的数据块，默认unlimited
+                    LOGICAL_READS_PER_CALL  --指定依次sql解析、执行、提取所允许读的最大数据块数目，默认unlimited
+                    IDLE_TIME  --指定会话超时时间，单位为分钟，默认unlimited
+                    CONNECT_TIME  --指定会话的总的连接时间，单位为分钟，默认unlimited
+                    PRIVATE_SGA --指定一个会话可以在共享池中分配到的空间大小，单位为byte，默认unlimited
+                    
+                    FAILED_LOGIN_ATTEMPTS --允许登录失败次数
+                    PASSWORD_LIFE_TIME  --密码允许使用天数
+                    PASSWORD_REUSE_TIME --相同的密码，修改后多少天才能重新使用
+                    PASSWORD_REUSE_MAX  --相同的密码，修改多少次后才能重新使用
+                    PASSWORD_VERIFY_FUNCTION --密码验证 ，默认null
+                    PASSWORD_LOCK_TIME --账号锁定时间  ，默认1天
+                    PASSWORD_GRACE_TIME --从通知改密码到密码强制修改可宽限的时间
+                    INACTIVE_ACCOUNT_TIME --一定时间内不使用账号就锁定
+    1.9 管理用户profile
+            新建：  create profile profile_name 
+                    limit
+                    limit_param  limit_value
+                    ...
+            修改：  alter profile profile_name
+                    limit
+                    limit_param  limit_value
+                    ...
+            删除：  drop profile profile_name;
+    1.10 数据库实例管理
+</code></pre>
+<h1 id="oracle简介"><a href="#oracle简介" class="headerlink" title="oracle简介"></a><strong>oracle简介</strong></h1></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-02</span><i class="fa fa-tag"></i><a class="tag" href="/tags/oracle/" title="oracle">oracle </a><span class="leancloud_visitors"></span><span>About 4704 words, 15 min 40 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2023/04/02/2023-4-2-%E9%9A%8F%E7%AC%94/">博客搭建过程记录</a></h3></div><div class="post-content"><div class="card"><p><h1 id="记录下hexo-github博客搭建过程"><a href="#记录下hexo-github博客搭建过程" class="headerlink" title="记录下hexo+github博客搭建过程"></a><strong>记录下hexo+github博客搭建过程</strong></h1></p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-02</span><i class="fa fa-tag"></i><a class="tag" href="/tags/环境搭建类/" title="环境搭建类">环境搭建类 </a><span class="leancloud_visitors"></span><span>About 420 words, 1 min 24 sec  read</span></div></div></div></div><div class="pagination"><ul class="clearfix"></ul></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

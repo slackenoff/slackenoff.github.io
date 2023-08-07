@@ -1,11 +1,110 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>oracle基础 · 劣质真心的Blog</title><meta name="description" content="oracle简介
-ORACLE数据库系统是美国ORACLE公司（甲骨文）提供的以分布式数据库为核心的一组软件产品，是目前最流行的客户 / 服务器（client / server 或 B / S）体系结构的数据库之一。迄今为止ORACLE数据库是世界上使用最广泛的数据库管理系统。
-oracle的特点 "><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>oracle基础</a></h3></div><div class="post-content"><p><h1 id="oracle简介"><a href="#oracle简介" class="headerlink" title="oracle简介"></a><strong>oracle简介</strong></h1><span id="more"></span>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>oracle基础 · 劣质真心的Blog</title><meta name="description" content="oracle的认证证书（oracle database management）    OCA  Oracle Certified Associate
+    OCP  Oracle Certified Professional
+    OCM  Oracle Certified Master
+
+or"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>oracle基础</a></h3></div><div class="post-content"><p><h1 id="oracle的认证证书（oracle-database-management）"><a href="#oracle的认证证书（oracle-database-management）" class="headerlink" title="oracle的认证证书（oracle database management）"></a><strong>oracle的认证证书（oracle database management）</strong></h1><pre><code>    OCA  Oracle Certified Associate
+    OCP  Oracle Certified Professional
+    OCM  Oracle Certified Master
+</code></pre>
+<h1 id="oracle官方入门教程的sql学习路径"><a href="#oracle官方入门教程的sql学习路径" class="headerlink" title="oracle官方入门教程的sql学习路径"></a><strong>oracle官方入门教程的sql学习路径</strong></h1><pre><code>    1. retrieving data using the sql select statement
+    2. restricting and sorting data
+    3. using single-row functions to customize output
+    4. using Conversion functions and conditional expressions
+    5. reporting aggregated data using the group functions
+    6. display data from  multiple tables using joins
+    7. using subqueries to solve  queries
+    8. using set operators
+    9. managing tables using DML statements
+    10. introduction to data definition language
+    11. introduction to data dictionary views
+    12. creating sequences,synonyms and indexes
+    13. creating view
+    14. managing schema objects
+    15.retrieve data by using subqueries
+    16. manipulating data by using subqueries
+    17. controlling user access
+    18. manipulating data using advanced queries
+    19. managing data in different time zones
+</code></pre>
+<h1 id="oracle数据库管理与维护"><a href="#oracle数据库管理与维护" class="headerlink" title="oracle数据库管理与维护"></a><strong>oracle数据库管理与维护</strong></h1><pre><code>   1. 系统权限与实体权限
+            系统权限： 规定用户对数据库的使用权限
+            实体权限： 规定用户对数据库对象，如表、视图等的存取权限
+    1.1  账号创建、删除与授权（系统权限）
+
+            create user username identified by pwd；  // username，pwd  分别为要创建的用户及登录密码；
+            grant connect,resource,dba to username;   //授予数据库对象访问对象、创建数据库实体、创建数据库结构
+            drop user usename cascade  //  删除用户及所有由用户创建的的对象；
+
+    1.2  查看用户权限（系统权限）       
+            select * from dba_role_privs;
+            select * from dba_sys_privs;
+            select * from role_sys_privs; 
+    
+    1.3 权限传递（系统权限）
+            grant connect/resource/dba to  username with admin option   //可以传递所获得的权限；
+
+            补充：  若A授予B权限，则B可以将拥有的权限授予C； 如果B的权限被收回，B授予C的权限不会被收回，但A可以越过B收回C的权限；
+    
+    1.4 权限回收（系统权限）
+            revoke connect/resource/dba from  username;
+    
+    1.5 select/update/insert/delete/alter/index/execute/regerences   具体操作与系统权限几乎没有差异，唯一不同就是权限的回收是级联的。
+
+    1.6 情景模拟： 创建一个用户，允许传递权限，授予connect/resource/dba权限；
+            create user con1 identified by &quot;123456&quot;;
+            grant connect to con1  with admin option;
+            show  user;
+            conn con1/123456;
+            show user;
+    
+    1.7 触发的报错：
+            ORA-01045: user CON1 lacks CREATE SESSION privilege; logon denied；
+            ORA-01919: role &#39;RESOUCE&#39; does not exist
+            ORA-01924: role &#39;CONCECT&#39; not granted or does not exist
+            ORA-01031: insufficient privileges
+    
+    1.8 用户profile管理    profiles文件是口令和资源限制的配置集合，查看DBA_PROFILES表以了解详细信息；
+            主要包括： kernal type指resource_parameter；  password  type指password_parameter
+                    COMPOSITE_LIMIT   --单个会话中，总资源消耗  默认unlimited
+                    SESSIONS_PER_USER --限制用户的并发会话数目  默认unlimited 
+                    CPU_PER_SESSION --会话的cpu时间限制，单位为1/100秒  默认unlimited
+                    CPU_PER_CALL --依次调用/解析/执行/提取的cpu时间限制，单位为1/100秒，默认unlimited
+                    LOGICAL_READS_PER_SESSION --指定一个个会话允许读的数据块的数目，包括从内存和磁盘读取的数据块，默认unlimited
+                    LOGICAL_READS_PER_CALL  --指定依次sql解析、执行、提取所允许读的最大数据块数目，默认unlimited
+                    IDLE_TIME  --指定会话超时时间，单位为分钟，默认unlimited
+                    CONNECT_TIME  --指定会话的总的连接时间，单位为分钟，默认unlimited
+                    PRIVATE_SGA --指定一个会话可以在共享池中分配到的空间大小，单位为byte，默认unlimited
+                    
+                    FAILED_LOGIN_ATTEMPTS --允许登录失败次数
+                    PASSWORD_LIFE_TIME  --密码允许使用天数
+                    PASSWORD_REUSE_TIME --相同的密码，修改后多少天才能重新使用
+                    PASSWORD_REUSE_MAX  --相同的密码，修改多少次后才能重新使用
+                    PASSWORD_VERIFY_FUNCTION --密码验证 ，默认null
+                    PASSWORD_LOCK_TIME --账号锁定时间  ，默认1天
+                    PASSWORD_GRACE_TIME --从通知改密码到密码强制修改可宽限的时间
+                    INACTIVE_ACCOUNT_TIME --一定时间内不使用账号就锁定
+    1.9 管理用户profile
+            新建：  create profile profile_name 
+                    limit
+                    limit_param  limit_value
+                    ...
+            修改：  alter profile profile_name
+                    limit
+                    limit_param  limit_value
+                    ...
+            删除：  drop profile profile_name;
+    1.10 数据库实例管理
+</code></pre>
+<h1 id="oracle简介"><a href="#oracle简介" class="headerlink" title="oracle简介"></a><strong>oracle简介</strong></h1><span id="more"></span>
 <p>ORACLE数据库系统是美国ORACLE公司（甲骨文）提供的以分布式数据库为核心的一组软件产品，是目前最流行的客户 / 服务器（client / server 或 B / S）体系结构的数据库之一。迄今为止ORACLE数据库是世界上使用最广泛的数据库管理系统。</p>
 <h1 id="oracle的特点"><a href="#oracle的特点" class="headerlink" title="oracle的特点"></a><strong>oracle的特点</strong></h1><pre><code>    支持多用户、大事务量的事务处理
     数据安全性和完整性控制（银行金融等行业比较看重这一点）
     支持分布式数据处理
     可移植性
+    oracle是行存数据库，
+    行存数据库的dml效率较高（将一行数据放在一个存储单元，当对数据修改时，只要找到所在行就能一次性更改，相应的，因为每次都要读一整行，所以当进行查询时，即使指定列，还是会遍历一整行数据），
+    列存数据库的查询效率高（将一列数据放在一个存储单元，当对指定列进行查询时，只需要访问一次）。
+    行存，即数据逐行存储到磁盘，列存，即数据逐列存储到磁盘。
 </code></pre>
 <h1 id="oracle-体系结构"><a href="#oracle-体系结构" class="headerlink" title="oracle 体系结构"></a><strong>oracle 体系结构</strong></h1><pre><code>    database结构  --  
                     |
@@ -29,16 +128,64 @@ oracle的特点 "><meta name="keywords" content="Blog,博客,Hexo"><meta content
 
     Instance=SGA+background process实例=内存分配+一组后台进程
 </code></pre>
+<h1 id="重要的表及其用途"><a href="#重要的表及其用途" class="headerlink" title="重要的表及其用途"></a><strong>重要的表及其用途</strong></h1><pre><code>    1. SELECT * FROM NLS_DATABASE_PARAMETERS ;  //oracle的nls（national language support）配置，parameter and value；
+
+    --设置 NLS_LANG 环境参数是为 Oracle 软件指定语言环境行为的一种简便的方法。利用此方法可以设置客户端应用和数据库服务器使用的语言和区域。还可以指示客户端的字符集，该字符集与客户端程序输入或显示的数据的字符集相对应
+    --NLL 有3个组成要素：  语言（默认american）、地区以及字符集
+    --查看本地是否配置了NLS_LANG环境变量：  
+            sqlplus查询
+                     host echo %NLS_LANG%   //返回具体的字符集，则配置了环境变量；
+            或者
+            
+            查看注册表  
+                     @.[%NLS_LANG%]  //unable to open file .[xxx]  ，表示注册表未设置；
+
+            包含下列信息：
+                    NLS_RDBMS_VERSION  --db版本
+                    NLS_NCHAR_CONV_EXCP --
+                    NLS_LENGTH_SEMANTICS
+                    NLS_COMP
+                    NLS_DUAL_CURRENCY
+                    NLS_TIMESTAMP_TZ_FORMAT
+                    NLS_TIME_TZ_FORMAT
+                    NLS_TIMESTAMP_FORMAT
+                    NLS_TIME_FORMAT
+                    NLS_SORT
+                    NLS_DATE_LANGUAGE
+                    NLS_DATE_FORMAT
+                    NLS_CALENDAR
+                    NLS_NUMERIC_CHARACTERS
+                    NLS_NCHAR_CHARACTERSET
+                    NLS_CHARACTERSET
+                    NLS_ISO_CURRENCY
+                    NLS_CURRENCY
+                    NLS_TERRITORY
+                    NLS_LANGUAGE
+
+    2. SELECT * FROM nls_session_parameters;
+    3. SELECT * FROM NLS_INSTANCE_PARAMETERS ;
+    4. 数据字典：  有3类，  分别是——DBA_*、ALL_*、USER_*
+            4.1   select  *  from dba_all_tables;  --查看当前数据库下的所有表对象
+                  select * from user_all_tables;  --查看属于当前user的所有表对象
+</code></pre>
 <h1 id="sql基础-关键字、表名和字段名都不区分大小写"><a href="#sql基础-关键字、表名和字段名都不区分大小写" class="headerlink" title="sql基础  //关键字、表名和字段名都不区分大小写"></a><strong>sql基础  //关键字、表名和字段名都不区分大小写</strong></h1><pre><code>    =============================================既是操作数据，那必然先从数据类型开始
-    字符串： char 、varchar、varchar2、nvarchar、nvarchar2
 
-    数字： number（l,a）,遵循四舍五入
+    1. 字符串： char 、varchar、varchar2、nvarchar、nvarchar2
 
-    日期： date  注意日期格式  yyyy-mm-dd hh24:mi:ss  mi区别于mm月份
+    2. 数字： number（l,a）,遵循四舍五入,比较规则：A larger value is considered greater than a smaller one. All negative numbers are less than zero and all positive numbers. Thus, -1 is less than 100; -100 is less than -1.
 
-    clob和blob： 都属于lob，存储大字段类型，
+    The floating-point value NaN (not a number) is greater than any other numeric value and is equal to itself.
+
+    测试： select (binary_float/0) from dual;  --NaN  判断:is NAN
+
+    3. 日期： date  注意日期格式  yyyy-mm-dd hh24:mi:ss  mi区别于mm月份
+
+    4. clob和blob： 都属于lob，存储大字段类型，
             blob-binary large object 二进制大型对象，存储二进制字节流数据，如程序、图像、影音等
             character large object  字符型大型对象，存储文本型数据，如xml，json
+    A binary value of the data type RAW or BLOB is a sequence of bytes. When two binary values are compared, the corresponding, consecutive bytes of the two byte sequences are compared in turn. If the first bytes of both compared values are different, the binary value that contains the byte with the lower numeric value is considered smaller. If the first bytes are equal, second bytes are compared analogously, and so on, until either the compared bytes differ or the comparison process reaches the end of one of the values. In the latter case, the value that is shorter is considered smaller.
+
+    Binary values of the data type BLOB cannot be compared directly in comparison conditions. However, they can be compared with the PL/SQL function DBMS_LOB.COMPARE.
 
     =============================================sql 标准结构
     标准sql结构及执行顺序
@@ -186,4 +333,74 @@ SELECT * FROM DEMO o; //step 1
                     --此处的引用old和new  需要带  :  ，修改方式为 referencing new as  alisa1  old as alias2；
             end;
 </code></pre>
-</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-02</span><i class="fa fa-tag"></i><a class="tag" href="/tags/oracle/" title="oracle">oracle </a><span class="leancloud_visitors"></span><span>About 2025 words, 6 min 45 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/02/oracle基础/,劣质真心的Blog,oracle基础,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/" title="概念积累">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/02/2023-4-2-%E9%9A%8F%E7%AC%94/" title="博客搭建过程记录">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>索引相当于数据的目录，在oracle中，rowid是每一行数据的标识，当数据量膨胀时，rowid也会随之膨胀，建立索引，能够快速找到rowid</p>
+<p>索引建立时，会对指定列的数据做排序，并将排序后的值与rowid绑定保存</p>
+<p>索引建立在作为条件、排序的列上；多表关联键上；小表不建索引； 索引占用物理空间，索引，不要随意建索引</p>
+<h2 id="drop-truncate-delete"><a href="#drop-truncate-delete" class="headerlink" title="drop  truncate delete"></a>drop  truncate delete</h2><p>drop  truncate 是  DDL，  delete是dml<br>执行效率上， drop &gt; truncate&gt;delete</p>
+<p>delete执行不会自动提交，可以回滚；  drop与truncate自动提交，不可回滚</p>
+<p>delete、truncate是对数据的删除，保留结构定义； drop是对结构和数据的删除，且被表依赖的对象被删除，或者失效</p>
+<h2 id="动态性能视图"><a href="#动态性能视图" class="headerlink" title="动态性能视图"></a>动态性能视图</h2><blockquote>
+<p>什么是动态性能视图？</p>
+</blockquote>
+<pre><code>    动态性能视图是表（v_$fixed_table中，每个object的type都是table），通过它将内存中的数据或者控制文件里的数据以表的形式展现出来，只要数据库在运行，就不断的更新动态性能视图；
+</code></pre>
+<blockquote>
+<p>动态视图的标记</p>
+</blockquote>
+<pre><code>    动态视图的标记主要有5种：V$ 针对单个实例的视图、GV$ 全局视图针对多个实例环境、X$、GO$、O$
+</code></pre>
+<blockquote>
+<p>2个重要的动态性能视图</p>
+</blockquote>
+<pre><code>    v_$fixed_table --罗列全部的动态性能视图
+    v_$fixed_view_definition --罗列动态性能视图的定义，具体为一串sql
+</code></pre>
+<blockquote>
+<p>关于动态性能视图的一些说明</p>
+</blockquote>
+<pre><code>    1. 需要sysdba权限才能对动态性能视图进行访问
+    2. 动态性能视图只能查看，不能做修改
+    3. 动态性能视图随着数据库实例的启停创建、删除
+    4. 动态性能视图是描述数据的数据，它的信息主要来自内存和控制文件
+    5. 数据库实例的nomount、mount以及open阶段中，只有open状态是可以访问v_$fixed_table,
+            nonmount状态下，可以查看内存信息相关的动态性能视图
+            mount状态下，进一步读取到控制文件，可以查看相关的动态性能视图
+            open状态下，进一步访问与oracle性能相关的动态性能视图
+</code></pre>
+<blockquote>
+<p>一些有用的动态性能视图</p>
+</blockquote>
+<pre><code>    1. v$instance 当前实例的描述信息，如版本，主机，实例名，启动状态，
+
+    2. v$sga &amp;  v$sgainfo（更详细）   
+       sga的组成， 包含3部分， 单位均为**byte**
+            a&gt;  fixed size      sga的固定大小，包含数据库和实例的状态信息等通用信息，后台进程需要访问这部分信息，不存储用户数据
+            b&gt;  variable size   包括shared_pool_size、java_pool_size和large_pool_size
+            c&gt;  database buffer db_cache_size的大小
+            d&gt;  redo buffer     代表日志缓冲区的大小
+    
+    3. V$parameter  初始化参数信息
+
+    4. v$version  查看版本信息
+    
+    5. v$session  会话信息，username为null的，指后台进程会话
+
+    6. v$process  进程信息，包含服务器进程和后台进程
+
+    7. v$controlfile、v$datafile、v$dbfile、v$logfile、v$log
+
+    8. v$thread  --
+
+    9. v$lock  --显示锁信息，与v$session关联使用
+
+    10. v$locked_object  --显示被加锁的数据库对象，通过与dba_objects进行连接，显示具体的对象名及执行加锁操作的oracle用户名
+
+    11. v$tablespace  --显示表空间信息
+
+    12. v$sql &amp; v$sqltext &amp;  v$sqlarea --查看执行的脚本信息
+
+    13. v$sysstat  --系统的统计信息 重要且直观
+
+    14. v$system_event  --数据库当前的活动信息，如磁盘读写，控制文件的状态
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-04-02</span><i class="fa fa-tag"></i><a class="tag" href="/tags/oracle/" title="oracle">oracle </a><span class="leancloud_visitors"></span><span>About 4704 words, 15 min 40 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/04/02/oracle基础/,劣质真心的Blog,oracle基础,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/04/03/%E6%A6%82%E5%BF%B5%E7%A7%AF%E7%B4%AF/" title="概念积累">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/04/02/2023-4-2-%E9%9A%8F%E7%AC%94/" title="博客搭建过程记录">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

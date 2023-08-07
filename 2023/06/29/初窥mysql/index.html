@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>初窥mysql · 劣质真心的Blog</title><meta name="description" content="参考手册  https://dev.mysql.com/doc/refman/8.0/en/database-use.html  以下英语内容取自官方文档，请读者自行理解下载地址  community版本   https://dev.mysql.com/downloads/  练手用，所以选择了se"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>初窥mysql</a></h3></div><div class="post-content"><p><h1 id="参考手册-https-dev-mysql-com-doc-refman-8-0-en-database-use-html-以下英语内容取自官方文档，请读者自行理解"><a href="#参考手册-https-dev-mysql-com-doc-refman-8-0-en-database-use-html-以下英语内容取自官方文档，请读者自行理解" class="headerlink" title="参考手册  https://dev.mysql.com/doc/refman/8.0/en/database-use.html  以下英语内容取自官方文档，请读者自行理解"></a>参考手册  <a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/database-use.html">https://dev.mysql.com/doc/refman/8.0/en/database-use.html</a>  以下英语内容取自官方文档，请读者自行理解</h1><h1 id="下载地址-community版本-https-dev-mysql-com-downloads-练手用，所以选择了server-only，之后用dbeaver连接-记得配一下环境变量"><a href="#下载地址-community版本-https-dev-mysql-com-downloads-练手用，所以选择了server-only，之后用dbeaver连接-记得配一下环境变量" class="headerlink" title="下载地址  community版本   https://dev.mysql.com/downloads/  练手用，所以选择了server only，之后用dbeaver连接,记得配一下环境变量"></a>下载地址  community版本   <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/">https://dev.mysql.com/downloads/</a>  练手用，所以选择了server only，之后用dbeaver连接,记得配一下环境变量</h1><h1 id="command-line-下的使用"><a href="#command-line-下的使用" class="headerlink" title="command line 下的使用"></a>command line 下的使用</h1><pre><code>    连接  ：  mysql -h localhost -u root -p  // -h mysql server地址，-u  用户  ， -p 端口  默认3306
+
+    查看db：  show databases;   by default  1.information_schema,2.mysql,3.performance_schema,4.sys 
+
+    使用db：  use  db_name; 如果有，则database changed，否则  1049（42000） unknown database &#39;db_name&#39;
+
+    查看tables：  show tables;  
+</code></pre>
+<h1 id="mysql-入门"><a href="#mysql-入门" class="headerlink" title="mysql 入门"></a>mysql 入门</h1><h2 id="1-基本数据类型-literal-values"><a href="#1-基本数据类型-literal-values" class="headerlink" title="1   基本数据类型 literal values"></a>1   基本数据类型 literal values</h2><pre><code>    1.1 string： A string is a sequence of bytes or characters, enclosed within either single quote (&#39;) or double quote (&quot;) characters  //  单引号或双引号括起来的一组字母
+
+    1.2 numeric：Number literals include exact-value (integer and DECIMAL) literals and approximate-value (floating-point) literals. // 整型、浮点型
+    
+    1.3 date and time：Date and time values can be represented in several formats, such as quoted strings or as numbers, depending on the exact type of the value and other factors. For example, in contexts where MySQL expects a date, it interprets any of &#39;2015-07-21&#39;, &#39;20150721&#39;, and 20150721 as a date. 
+    
+    //时间或日期类型对格式要求不高，但需要是有效的年月日，年份前2位可以省略。
+    //月份、日期及时间必须是有效的，否则会视作&quot;0000-00-00 00：00：00&quot;  .  
+    //yyyy-mm-ddThh24:hh:ss  用大写的T 而不是空格来分割年份与时间
+    //不按规范书写会报warning或者导致错误
+    Dates containing two-digit year values are ambiguous because the century is unknown. MySQL interprets two-digit year values using these rules:
+
+    Year values in the range 70-99 become 1970-1999.
+
+    Year values in the range 00-69 become 2000-2069.
+
+    1.4 hexadecimal：Hexadecimal literal values are written using X&#39;val&#39; or 0xval notation, where val contains hexadecimal digits (0..9, A..F). Lettercase of the digits and of any leading X does not matter. A leading 0x is case-sensitive and cannot be written as 0X.
+
+    1.5 bit-value：Bit-value literals are written using b&#39;val&#39; or 0bval notation. val is a binary value written using zeros and ones. Lettercase of any leading b does not matter. A leading 0b is case-sensitive and cannot be written as 0B.
+
+    1.6 boolean：The constants TRUE and FALSE evaluate to 1 and 0, respectively. The constant names can be written in any lettercase.
+
+    1.7 null：The NULL value means “no data.” NULL can be written in any lettercase.
+</code></pre>
+<blockquote>
+<p>dbeaver连接mysql出现的问题<br>    问题1： public key retrieval is not allowed<br>    解决办法：  编辑连接》驱动属性》 allowpublicretrieval  设置为true</p>
+</blockquote>
+<pre><code>问题2： Access denied for user 
+解决办法：  use  mysql； select host,user from user; 更改root的host为%  ，意为任意IP可以root权限访问。
+</code></pre>
+<h2 id="2-sql语法"><a href="#2-sql语法" class="headerlink" title="2  sql语法"></a>2  sql语法</h2><pre><code>    select   
+    from
+    where
+    group by
+    having
+    order by 
+    limit 
+
+2.1 Data Definition Statements ——————————————————create、alter、drop
+    warning: Atomic DDL is not transactional DDL. DDL statements, atomic or otherwise, implicitly end any transaction that is active in the current session, as if you had done a COMMIT before executing the statement. This means that DDL statements cannot be performed within another transaction, within transaction control statements such as START TRANSACTION ... COMMIT, or combined with other statements within the same transaction.
+
+    The atomic DDL feature supports both table and non-table DDL statements. 
+    Table-related DDL operations require storage engine support, whereas non-table DDL operations do not. Currently, only the InnoDB storage engine supports atomic DDL.
+
+    **Supported table DDL statements** include CREATE, ALTER, and DROP statements for databases, tablespaces, tables, and indexes, and the TRUNCATE TABLE statement.
+
+    **S**upported non-table DDL statements** include:
+
+    CREATE and DROP statements, and, if applicable, ALTER statements for stored programs, triggers, views, and loadable functions.
+
+    Account management statements: CREATE, ALTER, DROP, and, if applicable, RENAME statements for users and roles, as well as GRANT and REVOKE statements.
+
+2.2 Data Manipulation Statements ——————————————call、delete、do、except、handler、import、insert、intersect、replace、select、update
+
+    2.2.1 The CALL statement invokes a stored procedure that was defined previously with CREATE PROCEDURE.  //调用预定义的存储过程
+    
+
+
+2.3 Transactional and Locking Statements
+2.4 Replication Statements
+2.5 Prepared Statements
+2.6 Compound Statement Syntax
+2.7 Database Administration Statements
+2.8 Utility Statements
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-06-29</span><span class="leancloud_visitors"></span><span>About 881 words, 2 min 56 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/06/29/初窥mysql/,劣质真心的Blog,初窥mysql,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/07/12/springboot/" title="springboot">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/06/19/%E8%8B%B1%E8%AF%AD%E6%8B%93%E5%B1%95/" title="英语拓展">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
