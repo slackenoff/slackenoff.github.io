@@ -1,1 +1,182 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>sql server · 劣质真心的Blog</title><meta name="description" content=""><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>sql server</a></h3></div><div class="post-content"><p></p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-10</span><span class="leancloud_visitors"></span><span>About 0 words, 0 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/10/sql-server/,劣质真心的Blog,sql server,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/07/12/springboot/" title="springboot">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>sql server · 劣质真心的Blog</title><meta name="description" content="写在前面的话，因为工作中需要使用sql server，语句使用处处受阻，遂记录基础语法，常回顾
+
+
+关键字create、alter、insert、update、delete、drop、truncate
+对表操作1. 创建表/临时表    create table table_name
+    (
+ "><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>sql server</a></h3></div><div class="post-content"><p><p>写在前面的话，因为工作中需要使用sql server，语句使用处处受阻，遂记录基础语法，常回顾</p>
+<span id="more"></span>
+
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><p>create、alter、insert、update、delete、drop、truncate</p>
+<h1 id="对表操作"><a href="#对表操作" class="headerlink" title="对表操作"></a>对表操作</h1><h2 id="1-创建表-临时表"><a href="#1-创建表-临时表" class="headerlink" title="1. 创建表/临时表"></a>1. 创建表/临时表</h2><pre><code>    create table table_name
+    (
+        col1 datatype constraints,
+        col2 datatype constraints,
+        ...
+        col3 datatype constraints
+    )
+如： 
+    CREATE TABLE dbo.PurchaseOrderDetail (
+            PurchaseOrderID INT NOT NULL,
+            LineNumber SMALLINT NOT NULL,
+            ProductID INT NULL,
+            UnitPrice MONEY NULL,
+            OrderQty SMALLINT NULL,
+            ReceivedQty FLOAT NULL,
+            RejectedQty FLOAT NULL,
+            DueDate DATETIME NULL
+     );
+</code></pre>
+<h2 id="2-删除表"><a href="#2-删除表" class="headerlink" title="2. 删除表"></a>2. 删除表</h2><pre><code>2.1 限制和局限不能删除被 FOREIGN KEY 约束引用的表。 必须先删除引用 FOREIGN KEY 约束或引用表。 如果要在同一个 DROP TABLE 语句中删除引用表以及包含主键的表，则必须先列出引用表。
+
+2.2 删除表时，表的规则或默认值将被解除绑定，与该表关联的任何约束或触发器将被自动删除。 如果要重新创建表，则必须重新绑定相应的规则和默认值，重新创建某些触发器，并添加所有必需的约束。
+
+2.3 如果删除的表包含带有 FILESTREAM 属性的 varbinary (max) 列，则不会删除在文件系统中存储的任何数据。
+
+2.4 不应在同一个批处理中对同一个表执行 DROP TABLE 和 CREATE TABLE。 否则，可能出现意外错误。
+
+2.5 任何引用已删除表的视图或存储过程都必须显式删除或修改，以便删除对该表的引用。
+
+DROP TABLE dbo.PurchaseOrderDetail;
+</code></pre>
+<h2 id="3-复制表"><a href="#3-复制表" class="headerlink" title="3. 复制表"></a>3. 复制表</h2><pre><code>3.1  需要具备create table 权限，才能复制表
+
+--如果目标表已经存在，仅复制数据，使用如下sql
+    insert into taget_table_name
+    select  ...
+    from   source_table_name 
+
+
+USE AdventureWorks2022;  
+GO  
+    CREATE TABLE dbo.EmployeeSales  
+    ( BusinessEntityID   varchar(11) NOT NULL,  
+    SalesYTD money NOT NULL  
+    );  
+GO  
+    INSERT INTO dbo.EmployeeSales  
+    SELECT BusinessEntityID, SalesYTD   
+    FROM Sales.SalesPerson;  
+GO
+
+
+--如果目标表不存在，复制表结构及数据，使用如下sql
+    select ...into target_table_name from source_table_name
+
+SELECT...INTO 语句的操作分为两个部分：创建新表，然后插入行。 这意味着如果插入失败，它们将全部回滚，但新的（空）表将保留。
+
+SELECT c.FirstName, c.LastName, e.JobTitle, a.AddressLine1, a.City, sp.Name AS [State/Province], a.PostalCode  
+INTO dbo.EmployeeAddresses  
+FROM Person.Person AS c  
+JOIN HumanResources.Employee AS e   
+ON e.BusinessEntityID = c.BusinessEntityID  
+JOIN Person.BusinessEntityAddress AS bea  
+ON e.BusinessEntityID = bea.BusinessEntityID  
+JOIN Person.Address AS a  
+ON bea.AddressID = a.AddressID  
+JOIN Person.StateProvince as sp   
+ON sp.StateProvinceID = a.StateProvinceID;  
+GO
+
+如果要复制的表来源为第三方数据库，
+USE master;  
+GO  
+-- Create a link to the remote data source.   
+-- Specify a valid server name for @datasrc as &#39;server_name&#39; 
+-- or &#39;server_name\instance_name&#39;.  
+EXEC sp_addlinkedserver @server = N&#39;MyLinkServer&#39;,  
+    @srvproduct = N&#39; &#39;,  
+    @provider = N&#39;SQLNCLI&#39;,   
+    @datasrc = N&#39;server_name&#39;,  
+    @catalog = N&#39;AdventureWorks2022&#39;;  
+GO  
+
+USE AdventureWorks2022;  
+GO  
+-- Specify the remote data source in the FROM clause using a four-part name   
+-- in the form linked_server.catalog.schema.object.  
+SELECT DepartmentID, Name, GroupName, ModifiedDate  
+INTO dbo.Departments  
+FROM MyLinkServer.AdventureWorks2022.HumanResources.Department  
+GO  
+
+-- Use the OPENQUERY function to access the remote data source.  
+SELECT DepartmentID, Name, GroupName, ModifiedDate  
+INTO dbo.DepartmentsUsingOpenQuery  
+FROM OPENQUERY(MyLinkServer, &#39;SELECT *  
+            FROM AdventureWorks2022.HumanResources.Department&#39;);   
+GO  
+
+-- Use the OPENDATASOURCE function to specify the remote data source.  
+-- Specify a valid server name for Data Source using the format 
+-- server_name or server_name\instance_name.  
+SELECT DepartmentID, Name, GroupName, ModifiedDate  
+INTO dbo.DepartmentsUsingOpenDataSource  
+FROM OPENDATASOURCE(&#39;SQLNCLI&#39;,  
+    &#39;Data Source=server_name;Integrated Security=SSPI&#39;)  
+    .AdventureWorks2022.HumanResources.Department;  
+GO
+</code></pre>
+<h2 id="4-重命名表"><a href="#4-重命名表" class="headerlink" title="4. 重命名表"></a>4. 重命名表</h2><pre><code>4.1 需要具备alter权限，才能重命名
+sp_rename 
+            &#39;&#39;, 
+            --1. objectname
+            此处是表的列，写法为  table.column/schema.table.column
+            此处是索引，写法为  table.index/schema.table.index
+            此处是约束,写法为  schema.constraint 
+            &#39;&#39;,
+            --2. new_name
+            新名称 
+            &#39;&#39;
+            --3. object_type
+            可以是column、database、index、object、statistics、userdatatype
+
+USE AdventureWorks2022;
+GO  schema = sales  table = SalesTerritory new_name = SalesTerr
+EXEC sp_rename &#39;Sales.SalesTerritory&#39;, &#39;SalesTerr&#39;;
+</code></pre>
+<h2 id="5-查看表定义"><a href="#5-查看表定义" class="headerlink" title="5. 查看表定义"></a>5. 查看表定义</h2><pre><code>EXEC sp_help &#39;dbo.mytable&#39;;
+</code></pre>
+<h2 id="6-查看表的依赖关系"><a href="#6-查看表的依赖关系" class="headerlink" title="6. 查看表的依赖关系"></a>6. 查看表的依赖关系</h2><h2 id="7-添加列"><a href="#7-添加列" class="headerlink" title="7. 添加列"></a>7. 添加列</h2><pre><code>ALTER TABLE dbo.doc_exa 
+ADD column_b VARCHAR(20) NULL, column_c INT NULL ;
+</code></pre>
+<h2 id="8-删除列"><a href="#8-删除列" class="headerlink" title="8. 删除列"></a>8. 删除列</h2><pre><code>ALTER TABLE dbo.doc_exb DROP COLUMN column_b;
+</code></pre>
+<h2 id="9-对列重命名"><a href="#9-对列重命名" class="headerlink" title="9. 对列重命名"></a>9. 对列重命名</h2><pre><code>EXEC sp_rename &#39;dbo.ErrorLog.ErrorTime&#39;, &#39;ErrorDateTime&#39;, &#39;COLUMN&#39;;
+
+将errorlog表的errortime字段，重命名为errordatetime
+</code></pre>
+<h2 id="10-修改列的数据类型"><a href="#10-修改列的数据类型" class="headerlink" title="10. 修改列的数据类型"></a>10. 修改列的数据类型</h2><pre><code>CREATE TABLE dbo.doc_exy (column_a INT );  
+GO  
+INSERT INTO dbo.doc_exy (column_a) VALUES (10);  
+GO  
+ALTER TABLE dbo.doc_exy ALTER COLUMN column_a DECIMAL (5, 2);  
+GO
+</code></pre>
+<h2 id="11-复制列"><a href="#11-复制列" class="headerlink" title="11. 复制列"></a>11. 复制列</h2><pre><code>USE AdventureWorks2022;  
+GO  
+
+CREATE TABLE dbo.EmployeeSales  
+( BusinessEntityID   varchar(11) NOT NULL,  
+SalesYTD money NOT NULL  
+);  
+
+GO  
+
+INSERT INTO dbo.EmployeeSales  
+    SELECT BusinessEntityID, SalesYTD   
+    FROM Sales.SalesPerson;  
+</code></pre>
+<h2 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h2><pre><code>表通常具有包含唯一标识表中每一行的值的一列或一组列。 这样的一列或多列称为表的主键 (PK)，用于强制表的实体完整性。
+</code></pre>
+<h2 id="外键-A是B的外键，则先有A，后有B，否则会报错"><a href="#外键-A是B的外键，则先有A，后有B，否则会报错" class="headerlink" title="外键  A是B的外键，则先有A，后有B，否则会报错"></a>外键  A是B的外键，则先有A，后有B，否则会报错</h2><pre><code>Person 表的主键，被PersonSales表引用，
+如PersonSales.personID=Person.ID， 
+则Person.ID就是就是PersonSales表的外键，
+如果Person表不存在某个ID，则PersonSales表不允许写入值；
+</code></pre>
+<h2 id="check-约束"><a href="#check-约束" class="headerlink" title="check 约束"></a>check 约束</h2><pre><code>ALTER TABLE dbo.DocExc   
+ADD ColumnD int NULL   
+CONSTRAINT CHK_ColumnD_DocExc   
+CHECK (ColumnD &gt; 10 AND ColumnD &lt; 50);  
+</code></pre>
+<h2 id="存储过程与定时任务"><a href="#存储过程与定时任务" class="headerlink" title="存储过程与定时任务"></a>存储过程与定时任务</h2></p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-10</span><span class="leancloud_visitors"></span><span>About1189words, 3min57secread</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/10/sql-server/,劣质真心的Blog,sql server,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/07/12/springboot/" title="springboot">Próximo post</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
