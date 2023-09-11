@@ -179,4 +179,58 @@ ADD ColumnD int NULL
 CONSTRAINT CHK_ColumnD_DocExc   
 CHECK (ColumnD &gt; 10 AND ColumnD &lt; 50);  
 </code></pre>
-<h2 id="存储过程与定时任务"><a href="#存储过程与定时任务" class="headerlink" title="存储过程与定时任务"></a>存储过程与定时任务</h2></p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-10</span><span class="leancloud_visitors"></span><span>About1189words, 3min57secread</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/10/sql-server/,劣质真心的Blog,sql server,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/07/12/springboot/" title="springboot">Próximo post</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+<h2 id="存储过程与定时任务"><a href="#存储过程与定时任务" class="headerlink" title="存储过程与定时任务"></a>存储过程与定时任务</h2><p>CREATE PROCEDURE  DBO.SP_NAME<br>BEGIN<br>    DECLARE @VAR INT;<br>    –DECLARE @VAR1 INT, VAR2 INT ,VAR 3 INT;<br>END;</p>
+<h2 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h2><pre><code>--声明游标
+declare cur_name cursor for 
+select ... 
+
+--OPEN 语句填充结果集
+open cur_name
+
+--FETCH 返回结果集中的行
+fetch next from cur_name into  @var
+
+while @@fetch_status = 0 
+@@fetch_status有3个值 ，模拟触发场景
+0  fetch语句拿到结果集
+-1 fetch语句失败或行不存在结果集中  
+-2 提取的行不存在
+-9 游标未执行提取操作
+
+--CLOSE 语句释放与游标关联的当前结果集
+close cur_name
+
+--DEALLOCATE 语句释放游标所使用的资源
+deallocate cur_name
+</code></pre>
+<h2 id="openquery"><a href="#openquery" class="headerlink" title="openquery"></a>openquery</h2><pre><code>database link中会用到
+常见的操作
+--插入操作
+insert into openquery
+    (
+        link_name, &#39;select a,b,c,d from table&#39;
+    ) 
+select &#39;&#39; a,&#39;&#39; b,&#39;&#39; c,&#39;&#39; d 
+--更新操作
+update openquery(link_name,&#39;select col1 from table&#39;)
+set col1 = &#39;&#39;
+
+--删除操作
+delete from openquery
+(link_name,
+&#39;select col  from where ...&#39;
+)
+
+merge into
+
+注意点：
+    1. openquery不能传参， 
+    &#39;select * from table where col = @var&#39; 是不允许的，
+    但是，
+    &#39;select * from table&#39;) where col=@var是允许的，
+    且
+    等效
+    
+    2. 
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-10</span><span class="leancloud_visitors"></span><span>About1433words, 4min46secread</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/10/sql-server/,劣质真心的Blog,sql server,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/07/12/springboot/" title="springboot">Próximo post</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
