@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>tomcat · 劣质真心的Blog</title><meta name="description" content="系统学习web服务器
+
+
+什么是web服务器web服务器，又称http服务器，因为它使用http协议与客户端通信。
+
+    补充： 
+        基于java的web服务器，使用2个重要的类，java.net.Socket 和 java.net.ServerSocket
+
+        ht"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>tomcat</a></h3></div><div class="post-content"><p><p>系统学习web服务器</p>
+<span id="more"></span>
+
+<h1 id="什么是web服务器"><a href="#什么是web服务器" class="headerlink" title="什么是web服务器"></a>什么是web服务器</h1><pre><code>web服务器，又称http服务器，因为它使用http协议与客户端通信。
+
+    补充： 
+        基于java的web服务器，使用2个重要的类，java.net.Socket 和 java.net.ServerSocket
+
+        http协议是请求-应答作业模式，客户端请求一个文件，服务端响应请求。
+
+        http协议使用tcp连接，默认使用80端口。 
+
+        http的第一个版本是http/0.9，后被1.0取代，目前1.0和1.1是广泛应用的版本。
+</code></pre>
+<h1 id="tomcat-启动日志报错"><a href="#tomcat-启动日志报错" class="headerlink" title="tomcat 启动日志报错"></a>tomcat 启动日志报错</h1><pre><code>1. 找不到基于APR的Apache Tomcat本机库,该库允许在生产环境中获得最佳性能 
+
+    需要下载tcnative-1.dll，放到jdk的bin目录下
+    下载地址： https://tomcat.apache.org/download-native.cgi
+
+2. 基于APR的本地库加载失败.错误报告为[C:\Program Files\Java\jdk-17\bin\tcnative-1.dll: Can&#39;t load IA 32-bit .dll on a AMD 64-bit platform]
+
+    下载的dll是 win32， jdk是win64
+
+    留意native1和native2的区别
+
+3. The server cannot be started because one or more of the ports are invalid.
+
+    在eclipse打开tomcat时，报错，双击server区域列出的server，看ports区域是否有未指定的端口，
+        如 tomcat admin port默认是 -，要自己修改。 
+
+4. jdk与tomcat的冲突检测
+
+    官网网址如下：
+    https://tomcat.apache.org/whichversion.html
+
+5. eclipse tomcat启动成功，但localhost无法访问资源
+
+    解决办法：
+    勾选tomcat server的server locations下  use tomcat installation
+
+    说明： 
+    在本地访问webapp下的资源时，路径读取的是server.xml中，
+    Host appBase=&#39;webapps&#39;这段， 如果在webapp下新建一个目录WEB_DEMO，放一个index.html，
+
+    则地址可以写为：
+    http://localhost:8080/WEB_DEMO/INDEX.HTML
+
+    端口读取的是server.xml中
+    Connector的配置，
+    &lt;Connector executor=&quot;tomcatThreadPool&quot;
+           port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot;
+           maxParameterCount=&quot;1000&quot;
+           /&gt;
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-24</span><span class="leancloud_visitors"></span><span>About 474 words, 1 min 34 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/24/tomcat/,劣质真心的Blog,tomcat,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/09/24/batch/" title="batch">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

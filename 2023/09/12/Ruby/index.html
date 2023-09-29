@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>Ruby · 劣质真心的Blog</title><meta name="description" content="Ruby语言初体验
+
+标准输入输出    puts
+
+基本数据类型数值： 
+    整型： fixnum 、 bignum
+
+    浮点：
+
+字符串：
+
+数组：[]
+
+哈希类型：&amp;#123;&amp;#125;
+
+范围类型: start..end  包含边界  start...end  不包含end
+
+注"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Ruby</a></h3></div><div class="post-content"><p><p>Ruby语言初体验</p>
+<span id="more"></span>
+<h1 id="标准输入输出"><a href="#标准输入输出" class="headerlink" title="标准输入输出"></a>标准输入输出</h1><pre><code>    puts
+</code></pre>
+<h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><pre><code>数值： 
+    整型： fixnum 、 bignum
+
+    浮点：
+
+字符串：
+
+数组：[]
+
+哈希类型：&#123;&#125;
+
+范围类型: start..end  包含边界  start...end  不包含end
+</code></pre>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><pre><code>    # 单行注释
+
+    =begin
+    多行注释
+    =end
+</code></pre>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><pre><code>| BEGIN | do  | next  | then  |  end  |
+| else  | nil | true  |alias  | elsif |
+| not   | undef| and  |END    | or    |
+| unless| begin| ensure| redo | until |
+| break | false| rescue | when | case |
+|case   | for  | retry  | while | class |
+|if     | return | yield | def | in |
+|self | _FILE_ | defined? | module | super | _LINE_  |
+</code></pre>
+<h1 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h1><pre><code>空格在除字符串的地方，会被忽略
+</code></pre>
+<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><pre><code>大小写敏感
+</code></pre>
+<h1 id="BEGIN"><a href="#BEGIN" class="headerlink" title="BEGIN"></a>BEGIN</h1><pre><code>BEGIN&#123;
+    CODE  # code将在程序运行前调用
+&#125;
+</code></pre>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1><pre><code>END&#123;
+    CODE # code将在程序的结尾被调用
+&#125;
+</code></pre>
+<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><pre><code>class Customer  # 类名 首字母大写  
+end
+</code></pre>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><pre><code>全局变量： $ 
+类变量：  @@
+实例变量： @
+局部变量： 小写字母或 _  开始
+</code></pre>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><pre><code>obj_name=Class.new  # 创建对象
+</code></pre>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><pre><code>def func  # 小写字母开头
+end
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-12</span><span class="leancloud_visitors"></span><span>About 225 words, 45 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/12/Ruby/,劣质真心的Blog,Ruby,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/09/20/JAVA%E5%85%A5%E9%97%A8/" title="JAVA入门">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/09/10/sql-server/" title="sql server">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

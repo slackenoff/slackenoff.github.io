@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>JAVA入门 · 劣质真心的Blog</title><meta name="description" content="人生苦短，我学java，230920  今天跟开发对接，因为不专业，几十分钟的事情，拖了一下午，汗颜
+
+知识点1 JDKJDK概念  
+    java development kit  开发工具包，开发用的，集成了jre；
+
+JDK结构  windows 执行  tree /f  
+
+知识点2 J"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>JAVA入门</a></h3></div><div class="post-content"><p><p>人生苦短，我学java，230920  今天跟开发对接，因为不专业，几十分钟的事情，拖了一下午，汗颜</p>
+<span id="more"></span>
+<h1 id="知识点1-JDK"><a href="#知识点1-JDK" class="headerlink" title="知识点1 JDK"></a>知识点1 JDK</h1><pre><code>JDK概念  
+    java development kit  开发工具包，开发用的，集成了jre；
+
+JDK结构  windows 执行  tree /f  
+</code></pre>
+<h1 id="知识点2-JRE"><a href="#知识点2-JRE" class="headerlink" title="知识点2 JRE"></a>知识点2 JRE</h1><pre><code>JRE概念
+    java runtime environment  运行时环境，用来运行java程序代码的；
+
+JRE结构
+</code></pre>
+<h1 id="知识点3-JAR"><a href="#知识点3-JAR" class="headerlink" title="知识点3 JAR"></a>知识点3 JAR</h1><pre><code>JAR概念
+    java archive file  ，是一种与平台无关的文件格式，压缩格式为zip，形式上等同于zip，但内容上，作为引用对象的jar包含有meta-inf/menifest.mf文件，作为可执行对象的jar包含有main-class和class-path。
+
+Jar内容
+
+Jar包的使用
+
+    运行jar包   java -jar xx.jar
+    打包              
+</code></pre>
+<h1 id="知识点4-WAR"><a href="#知识点4-WAR" class="headerlink" title="知识点4 WAR"></a>知识点4 WAR</h1><pre><code>WAR概念
+
+    web archive file 也是与平台无关的文件格式，它是一个可以运行的web模块，是web应用程序
+
+WAR结构
+</code></pre>
+<h1 id="知识点5-JDK11之后，jre不再是默认安装，需要命令生成"><a href="#知识点5-JDK11之后，jre不再是默认安装，需要命令生成" class="headerlink" title="知识点5  JDK11之后，jre不再是默认安装，需要命令生成"></a>知识点5  JDK11之后，jre不再是默认安装，需要命令生成</h1><pre><code>bin\jlink.exe --module-path jmods --add-modules java.desktop --output jre
+</code></pre>
+<h1 id="知识点6-java-class"><a href="#知识点6-java-class" class="headerlink" title="知识点6 .java  .class"></a>知识点6 .java  .class</h1><pre><code>.java  java源文件，是文本文件
+.class 二进制字节码文件，由.java解析而来
+</code></pre>
+<h1 id="vscode配置java-settings"><a href="#vscode配置java-settings" class="headerlink" title="vscode配置java settings"></a>vscode配置java settings</h1><pre><code>ctrl+shift+p  打开全局搜索
+
+输入java overview  进入java的配置模块
+
+搜索java home,进入settings.json配置
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-20</span><span class="leancloud_visitors"></span><span>About 344 words, 1 min 8 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/20/JAVA入门/,劣质真心的Blog,JAVA入门,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/09/24/batch/" title="batch">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/09/12/Ruby/" title="Ruby">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
