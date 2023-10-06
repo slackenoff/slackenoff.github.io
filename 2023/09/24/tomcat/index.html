@@ -14,11 +14,41 @@
     补充： 
         基于java的web服务器，使用2个重要的类，java.net.Socket 和 java.net.ServerSocket
 
-        http协议是请求-应答作业模式，客户端请求一个文件，服务端响应请求。
+        http协议是请求-应答作业模式，客户端发起请求，服务端响应请求。
 
         http协议使用tcp连接，默认使用80端口。 
 
         http的第一个版本是http/0.9，后被1.0取代，目前1.0和1.1是广泛应用的版本。
+</code></pre>
+<h1 id="tomcat，catalina"><a href="#tomcat，catalina" class="headerlink" title="tomcat，catalina"></a>tomcat，catalina</h1><pre><code>tomcat： 基于java开发的，部署web项目的容器，它是web服务器和servlet容器的结合体，
+            
+            具备web服务器的功能  ——  将服务主机上的资源映射为一个url供外界访问
+
+            也具备serlet容器的功能  ——  处理客户端的http request，处理，并返回response，实现客户端与服务端的动态数据交互
+                servlet的架构：
+                        web browser   —— http &gt;  web server
+                                                            |
+                                                            servlet program
+                                                            |
+                                                            database  
+                servlet的模块组成：
+                        catalina(servlet容器)
+                        coyote（连接器）  为catalina提供连接通信
+                        jasper（jsp引擎） 为catalina提供jsp引擎
+                        javael（表达式语言） 
+                        naming（命名服务） 为catalina提供jndi服务
+                        juli（服务器日志） 为catalina提供日志服务
+
+catalina： catalina是tomcat web服务器的核心组件之一，它是servlet容器，负责处理http请求，管理servlet声明周期，提供会话管理和安全性支持等功能
+
+                catalina的结构：
+                            services：
+                                connector  处理与客户端的通信，接收请求，转给对应的容器处理，并将处理结构返回给客户
+                                containner 处理servlet请求
+                                engine 父容器  一个service只能有一个engine
+                                host 子容器（父容器） 虚拟主机，一个engine可以包含多个host
+                                context 子容器（父容器） web应用程序，一个host下可以包含多个context
+                                wrapper 子容器 表示一个servlet，它是容器的最底层，没有子容器。 一个context可以包含多个wrapper
 </code></pre>
 <h1 id="tomcat-启动日志报错"><a href="#tomcat-启动日志报错" class="headerlink" title="tomcat 启动日志报错"></a>tomcat 启动日志报错</h1><pre><code>1. 找不到基于APR的Apache Tomcat本机库,该库允许在生产环境中获得最佳性能 
 
@@ -62,4 +92,4 @@
            maxParameterCount=&quot;1000&quot;
            /&gt;
 </code></pre>
-</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-24</span><span class="leancloud_visitors"></span><span>About 474 words, 1 min 34 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/24/tomcat/,劣质真心的Blog,tomcat,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/09/24/batch/" title="batch">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-24</span><span class="leancloud_visitors"></span><span>About 876 words, 2 min 55 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/24/tomcat/,劣质真心的Blog,tomcat,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/09/24/batch/" title="batch">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
