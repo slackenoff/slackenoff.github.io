@@ -5,14 +5,7 @@
 熟悉批处理与变量
 编写bat脚本
 
-查看bat命令手册  command /?
-&amp;lt;!—&amp;gt;
-1. 专用命令echo  在命令行界面输出文本
-set   设置变量
-if    条件判断
-for   循环操作
-goto  跳转命令
-R"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>batch</a></h3></div><div class="post-content"><p><p>batch学习的四步</p>
+查看bat命令手册  command /?"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>batch</a></h3></div><div class="post-content"><p><p>batch学习的四步</p>
 <ol>
 <li>熟悉专用命令</li>
 <li>熟悉特殊符号与批处理</li>
@@ -20,149 +13,174 @@ R"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-
 <li>编写bat脚本</li>
 </ol>
 <p>查看bat命令手册  command /?</p>
-<p>&lt;!—&gt;</p>
-<h1 id="1-专用命令"><a href="#1-专用命令" class="headerlink" title="1. 专用命令"></a>1. 专用命令</h1><pre><code>echo  在命令行界面输出文本
-set   设置变量
-if    条件判断
-for   循环操作
-goto  跳转命令
-REM   注释
-::    注释
-@     控制回显输出
-pause 在此处暂停
-title 修改cmd的标题
-errorlevel 获取bat文件的执行状态，0代表执行成功，1代表执行失败
-color 不重要
-mode  
-:
-find
-start
-assoc
-ftype
-pushd
-popd
-call
-shift
-setlocal
-attrib
-</code></pre>
-<h1 id="2-特殊符号"><a href="#2-特殊符号" class="headerlink" title="2. 特殊符号"></a>2. 特殊符号</h1><pre><code>@   命令行回显屏蔽符
-%   批处理变量引导符
-%%  指定一个第一字母可替换的参数
-&gt;   重定向符
-&gt;&gt;  重定向符
-&lt;   重定向符
-&gt;&amp;  重定向符
-&lt;&amp;  重定向符
-|   管道命令
-^   转义字符
-&amp;   组合命令
-&amp;&amp;  组合命令
-||  组合命令
-&quot;&quot;  字符串界定符
-,   逗号
-;   分号
-()  括号
-!   感叹号
-</code></pre>
-<h1 id="2-数学运算，比较运算符"><a href="#2-数学运算，比较运算符" class="headerlink" title="2. 数学运算，比较运算符"></a>2. 数学运算，比较运算符</h1><p>SET /A expression</p>
-<pre><code>set /a count=6
-echo %count%
-6
-</code></pre>
-<p>SET /P variable=[promptString] </p>
-<pre><code>set /p count=&quot;请输入一个数字&quot;
-请输入一个数字6
-echo %count%
-6
-</code></pre>
-<p>EQU,NEQ,GTR,LSS,LEQ,GEQ 时间，日期比较</p>
-<pre><code>if not 3 equ 4 echo true
-true
+<!--more->
 
-if 3 neq 4 echo true
-true
+# 1. 专用命令
 
-if not 3 gtr 4 echo true
-true
+    echo  在命令行界面输出文本
+    set   设置变量
+    if    条件判断
+    for   循环操作
+    goto  跳转命令
+    REM   注释
+    ::    注释
+    @     控制回显输出
+    pause 在此处暂停
+    title 修改cmd的标题
+    errorlevel 获取bat文件的执行状态，0代表执行成功，1代表执行失败
+    color 不重要
+    mode  
+    :
+    find
+    start
+    assoc
+    ftype
+    pushd
+    popd
+    call
+    shift
+    setlocal
+    attrib
 
-if  3 lss 4 echo true
-true
 
-if not 3 geq 4 echo true
-true
+# 2. 特殊符号
+    @   命令行回显屏蔽符
+    %   批处理变量引导符
+    %%  指定一个第一字母可替换的参数
+    >   重定向符
+    >>  重定向符
+    <   重定向符
+    >&  重定向符
+    <&  重定向符
+    |   管道命令
+    ^   转义字符
+    &   组合命令
+    &&  组合命令
+    ||  组合命令
+    ""  字符串界定符
+    ,   逗号
+    ;   分号
+    ()  括号
+    !   感叹号
+   
+# 2. 数学运算，比较运算符
 
-if 3 leq 4 echo true
-true
-</code></pre>
-<p>== 字符串比较</p>
-<pre><code>if [not] &#39;abc&#39; == &#39;abc&#39; echo true
-true
-</code></pre>
-<h1 id="3-文件处理"><a href="#3-文件处理" class="headerlink" title="3. 文件处理"></a>3. 文件处理</h1><h2 id="3-1-dir"><a href="#3-1-dir" class="headerlink" title="3.1 dir /?"></a>3.1 dir /?</h2><p>语法规范：<br>DIR [drive:][path][filename] [/A[[:]attributes]] [/B] [/C] [/D] [/L] [/N]<br>    [/O[[:]sortorder]] [/P] [/Q] [/R] [/S] [/T[[:]timefield]] [/W] [/X] [/4]</p>
-<p>[drive:][path][filename]</p>
-<pre><code>用法1：
-dir /ad 只输出路径下所有的目录名，最后修改时间，目录大小
-dir /a-d 除目录外，其他的对象均输出，对象名，最后修改时间，对象大小
-dir /o  按分类顺序列出文件
-    /oN  按名称，字母顺序
-    /o-N 按名称，字母倒序
-    /oS  按大小，从小到大
-    /o-S 按大小，从大到小
-    /oD  按时间，从先到后
-    /o-D 按时间，从后到先 
-    /T：C/A/W  C创建时间， A 上次访问时间， W 上次写入的时间
-</code></pre>
-<h2 id="3-2-for"><a href="#3-2-for" class="headerlink" title="3.2 for /?"></a>3.2 for /?</h2><p>语法规则： FOR %variable IN (set) DO command [command-parameters]</p>
-<pre><code>用法1： for %i in (1,1,5) do set /a count=count+%i
+SET /A expression
 
-结果如下：
+    set /a count=6
+    echo %count%
+    6
+SET /P variable=[promptString] 
+
+    set /p count="请输入一个数字"
+    请输入一个数字6
+    echo %count%
+    6
+
+EQU,NEQ,GTR,LSS,LEQ,GEQ 时间，日期比较
+
+    if not 3 equ 4 echo true
+    true
+
+    if 3 neq 4 echo true
+    true
+
+    if not 3 gtr 4 echo true
+    true
+
+    if  3 lss 4 echo true
+    true
+
+    if not 3 geq 4 echo true
+    true
+
+    if 3 leq 4 echo true
+    true
+
+== 字符串比较
+
+    if [not] 'abc' == 'abc' echo true
+    true
+
+# 3. 文件处理
+## 3.1 dir /?
+语法规范：
+DIR [drive:][path][filename] [/A[[:]attributes]] [/B] [/C] [/D] [/L] [/N]
+    [/O[[:]sortorder]] [/P] [/Q] [/R] [/S] [/T[[:]timefield]] [/W] [/X] [/4]
+
+[drive:][path][filename]
+
+    用法1：
+    dir /ad 只输出路径下所有的目录名，最后修改时间，目录大小
+    dir /a-d 除目录外，其他的对象均输出，对象名，最后修改时间，对象大小
+    dir /o  按分类顺序列出文件
+        /oN  按名称，字母顺序
+        /o-N 按名称，字母倒序
+        /oS  按大小，从小到大
+        /o-S 按大小，从大到小
+        /oD  按时间，从先到后
+        /o-D 按时间，从后到先 
+        /T：C/A/W  C创建时间， A 上次访问时间， W 上次写入的时间
+
+## 3.2 for /?
+语法规则： FOR %variable IN (set) DO command [command-parameters]
+
+    用法1： for %i in (1,1,5) do set /a count=count+%i
+
+    结果如下：
+
+            set /a count=count+1
+            2
+            set /a count=count+1
+            3
+            set /a count=count+5
+            8
+
+    用法2： for /l %i in (1,1,5) do set /a count=count+%i
+
+    结果如下：
 
         set /a count=count+1
-        2
-        set /a count=count+1
-        3
+        9
+        set /a count=count+2
+        11
+        set /a count=count+3
+        14
+        set /a count=count+4
+        18
         set /a count=count+5
-        8
+        23
 
-用法2： for /l %i in (1,1,5) do set /a count=count+%i
+# 特殊用法：
+    
+    1. 文件夹带空格，用双引号把文件夹名括起来""
+    2. for循环中，使用 | 管道命令时， 需要写为 ^|
+    3. 多重判断 if a>b if(c>d echo xx) 是 且的关系，2个条件同时成立时，执行，否则不执行。
+       多重判断 if a>b if(c>d echo xx) else (if a>c if(c>d echo xx)) 是 或的关系，当a大于b或者c时，执行且的部分，否则不执行
 
-结果如下：
+# 小案例
 
-    set /a count=count+1
-    9
-    set /a count=count+2
-    11
-    set /a count=count+3
-    14
-    set /a count=count+4
-    18
-    set /a count=count+5
-    23
-</code></pre>
-<h1 id="特殊用法："><a href="#特殊用法：" class="headerlink" title="特殊用法："></a>特殊用法：</h1><pre><code>1. 文件夹带空格，用双引号把文件夹名括起来&quot;&quot;
-2. for循环中，使用 | 管道命令时， 需要写为 ^|
-3. 多重判断 if a&gt;b if(c&gt;d echo xx) 是 且的关系，2个条件同时成立时，执行，否则不执行。
-   多重判断 if a&gt;b if(c&gt;d echo xx) else (if a&gt;c if(c&gt;d echo xx)) 是 或的关系，当a大于b或者c时，执行且的部分，否则不执行
-</code></pre>
-<h1 id="小案例"><a href="#小案例" class="headerlink" title="小案例"></a>小案例</h1><pre><code>创建定时任务
-</code></pre>
-<h1 id="关于路径的说明，-（非标准）-与-（windows的标准分隔符）"><a href="#关于路径的说明，-（非标准）-与-（windows的标准分隔符）" class="headerlink" title="关于路径的说明， /（非标准） 与 \（windows的标准分隔符）"></a>关于路径的说明， /（非标准） 与 \（windows的标准分隔符）</h1><p>标准的 DOS 路径可由以下三部分组成：</p>
-<pre><code>1. 卷号或驱动器号，后跟卷分隔符 (:)。
-2. 目录名称。 目录分隔符用来分隔嵌套目录层次结构中的子目录。
-3. 可选的文件名。 目录分隔符用来分隔文件路径和文件名。
-如果以上三项都存在，则为绝对路径。 
-如未指定卷号或驱动器号，且目录名称的开头是目录分隔符，则路径属于当前驱动器根路径上的相对路径
-注意点：
+    创建定时任务
 
-C:\Projects\apilibrary\apilibrary.sln    C: 驱动器的根目录中的文件的绝对路径。
+# 关于路径的说明， /（非标准） 与 \（windows的标准分隔符）
 
-C:Projects\apilibrary\apilibrary.sln    C: 驱动器的当前目录中的相对路径。
-</code></pre>
-<p>通用命名约定 (UNC) 路径，用于访问网络资源，具有以下格式：</p>
-<pre><code>一个以 \\ 开头的服务器名或主机名。 服务器名称可以为 NetBIOS 计算机名称或者 IP/FQDN 地址（支持 IPv4 和 IPv6）。
-共享名，使用 \ 将其与主机名分隔开。 服务器名和共享名共同组成了卷。
-目录名称。 目录分隔符用来分隔嵌套目录层次结构中的子目录。
-可选的文件名。 目录分隔符用来分隔文件路径和文件名。
-</code></pre>
-</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-24</span><span class="leancloud_visitors"></span><span>About 1133 words, 3 min 46 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/24/batch/,劣质真心的Blog,batch,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/09/24/tomcat/" title="tomcat">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/09/20/JAVA%E5%85%A5%E9%97%A8/" title="JAVA入门">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
+标准的 DOS 路径可由以下三部分组成：
+
+    1. 卷号或驱动器号，后跟卷分隔符 (:)。
+    2. 目录名称。 目录分隔符用来分隔嵌套目录层次结构中的子目录。
+    3. 可选的文件名。 目录分隔符用来分隔文件路径和文件名。
+    如果以上三项都存在，则为绝对路径。 
+    如未指定卷号或驱动器号，且目录名称的开头是目录分隔符，则路径属于当前驱动器根路径上的相对路径
+    注意点：
+
+    C:\Projects\apilibrary\apilibrary.sln    C: 驱动器的根目录中的文件的绝对路径。
+
+    C:Projects\apilibrary\apilibrary.sln    C: 驱动器的当前目录中的相对路径。
+
+通用命名约定 (UNC) 路径，用于访问网络资源，具有以下格式：
+
+    一个以 \\ 开头的服务器名或主机名。 服务器名称可以为 NetBIOS 计算机名称或者 IP/FQDN 地址（支持 IPv4 和 IPv6）。
+    共享名，使用 \ 将其与主机名分隔开。 服务器名和共享名共同组成了卷。
+    目录名称。 目录分隔符用来分隔嵌套目录层次结构中的子目录。
+    可选的文件名。 目录分隔符用来分隔文件路径和文件名。
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-09-24</span><span class="leancloud_visitors"></span><span>About1108words, 3min41secread</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/09/24/batch/,劣质真心的Blog,batch,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/09/24/tomcat/" title="tomcat">Post Anterior</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/09/20/JAVA%E5%85%A5%E9%97%A8/" title="JAVA入门">Próximo post</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
