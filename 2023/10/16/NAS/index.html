@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>NAS · 劣质真心的Blog</title><meta name="description" content="NAS， Network attached storage，是一种用于网络存储设备的通讯协议，允许用户通过局域网或互联网连接到存储设备并访问和管理其中的数据。NAS有多种实现方式，包括NFS、CIFS/SMB、FTP、HTTP等。
+
+
+NAS协议是一种基于文件级别的存储方案，可以提供高效的数据共享和"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>NAS</a></h3></div><div class="post-content"><p><p>NAS， Network attached storage，是一种用于网络存储设备的通讯协议，允许用户通过局域网或互联网连接到存储设备并访问和管理其中的数据。NAS有多种实现方式，包括NFS、CIFS/SMB、FTP、HTTP等。</p>
+<span id="more"></span>
+
+<h1 id="NAS协议"><a href="#NAS协议" class="headerlink" title="NAS协议"></a>NAS协议</h1><pre><code>是一种基于文件级别的存储方案，可以提供高效的数据共享和备份，并支持多用户同时访问。
+
+可以在各种操作系统上运行，如linux、windows、unix以及macos
+</code></pre>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><pre><code>NFS
+    
+    NETWROK FILE SYSTEM，基于UDP协议，主要用于unix/linux系统； 跨平台，允许不同操作系统的计算机通过网络共享文件和目录。
+
+    工作原理：
+            1. 客户端发请求给服务端，请求读取或写入文件或目录
+            2. 服务器响应请求并返回请求的数据或执行请求的操作
+            3. 如果请求，需要传输数据，则数据通过网络传输
+            4. 数据缓存，客户端将最近访问的数据存储在本地缓存中，以便以后更快地访问相同地数据
+            5.锁定机制，当多个客户端同时访问一个文件时，NFS提供锁定机制来保证数据地完整性和一致性
+
+CIFS/SMB
+
+    Common Internet File System ， 基于tcp/ip协议，主要用于windows系统
+
+AFP
+
+    apple filing protocol  
+
+FTP
+
+    file transfer protocol 
+
+    ASCII模式（传输纯文本文件）和二进制模式(传输图像、视频和音频文件)
+
+    不安全协议，替代协议 FTPS和SFTP
+
+    FTP://访问服务站点
+
+    工作机制： 上传与下载， 先获取远程文件的副本，然后对副本进行修改，最后将修改后的文件副本上传服务器
+
+WEBDAV
+
+     web distributed authoring and  versioning ，一种基于http协议的文件管理协议，主要用于web应用
+
+ISCI
+
+    Internet small computer system interface ， 基于IP协议的存储网络协议，可以将远程存储设备映射位本地磁盘
+</code></pre>
+<h1 id="特点-优越性"><a href="#特点-优越性" class="headerlink" title="特点/优越性"></a>特点/优越性</h1><pre><code>NAS使得存储设备变得更加灵活、可靠、高效，并提供更好的数据分享和备份功能。
+
+安全性，数据传输加密，保证数据的完整性和机密性
+
+可靠性，嫩巩固快速识别故障并自动切换到备份设备
+
+传输效率较高（缓存、预读等）
+
+跨平台，支持多种操作系统和应用程序
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-10-16</span><span class="leancloud_visitors"></span><span>About 654 words, 2 min 10 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/10/16/NAS/,劣质真心的Blog,NAS,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2023/10/16/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" title="进制转换">Previous</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/09/24/tomcat/" title="tomcat">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>

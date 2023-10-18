@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="劣质真心/Again"><title>ping命令 · 劣质真心的Blog</title><meta name="description" content="ping命令，全程packet internet groper,是一种包探索器，用于测试网络连接量的程序主要是向特定的目的主机发送ICMP echo请求报文，测试站点是否可达。
+
+查看ping的参数ping /? 
+
+你将得到以下内容：
+ping [-t] [-a] [-n count] [-l s"><meta name="keywords" content="Blog,博客,Hexo"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="shortcut icon" type="image/x-icon" href="/images/JOJO.jpg"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/insight.css"><link rel="stylesheet" href="/css/search.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/kuuga.jpg"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/kuuga.jpg" style="width:220px;" alt="favicon"><h3 title=""><a href="/">劣质真心的Blog</a></h3><div class="description"><p>少年易老学难成，一寸光阴不可轻。未觉池塘春草梦，阶前梧叶已秋声。</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/slackenoff"><i class="fa fa-github"></i></a></li><li><a href="mailto:lzzxti@163.com"><i class="fa fa-envelope"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span>  </span><i class="fa fa-star"></i><span> 劣质真心/Again</span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>ping命令</a></h3></div><div class="post-content"><p><p>ping命令，全程packet internet groper,是一种包探索器，用于测试网络连接量的程序<br>主要是向特定的目的主机发送ICMP echo请求报文，测试站点是否可达。</p>
+<span id="more"></span>
+<h1 id="查看ping的参数"><a href="#查看ping的参数" class="headerlink" title="查看ping的参数"></a>查看ping的参数</h1><pre><code>ping /? 
+</code></pre>
+<p>你将得到以下内容：</p>
+<pre><code>ping [-t] [-a] [-n count] [-l size] [-f] [-i TTL] [-v TOS]
+        [-r count] [-s count] [[-j host-list] | [-k host-list]]
+        [-w timeout] [-R] [-S srcaddr] [-c compartment] [-p]
+        [-4] [-6] target_name
+</code></pre>
+<p>选项:</p>
+<pre><code>-t             Ping 指定的主机，直到停止。
+               若要查看统计信息并继续操作，请键入 Ctrl+Break；
+               若要停止，请键入 Ctrl+C。
+-a             将地址解析为主机名。
+-n count       要发送的回显请求数。
+-l size        发送缓冲区大小。
+-f             在数据包中设置“不分段”标记(仅适用于 IPv4)。
+-i TTL         生存时间。
+-v TOS         服务类型(仅适用于 IPv4。该设置已被弃用，
+               对 IP 标头中的服务类型字段没有任何
+               影响)。
+-r count       记录计数跃点的路由(仅适用于 IPv4)。
+-s count       计数跃点的时间戳(仅适用于 IPv4)。
+-j host-list   与主机列表一起使用的松散源路由(仅适用于 IPv4)。
+-k host-list    与主机列表一起使用的严格源路由(仅适用于 IPv4)。
+-w timeout     等待每次回复的超时时间(毫秒)。
+-R             同样使用路由标头测试反向路由(仅适用于 IPv6)。
+               根据 RFC 5095，已弃用此路由标头。
+               如果使用此标头，某些系统可能丢弃
+               回显请求。
+-S srcaddr     要使用的源地址。
+-c compartment 路由隔离舱标识符。
+-p             Ping Hyper-V 网络虚拟化提供程序地址。
+-4             强制使用 IPv4。
+-6             强制使用 IPv6。
+</code></pre>
+<h1 id="ping命令的输出解析"><a href="#ping命令的输出解析" class="headerlink" title="ping命令的输出解析"></a>ping命令的输出解析</h1><pre><code>第一部分：
+正在 Ping 36.155.132.55 具有 32 字节的数据
+
+第二部分：
+来自 36.155.132.55 的回复: 字节=32 时间=16ms TTL=53
+来自 36.155.132.55 的回复: 字节=32 时间=13ms TTL=53
+来自 36.155.132.55 的回复: 字节=32 时间=13ms TTL=53
+来自 36.155.132.55 的回复: 字节=32 时间=14ms TTL=53
+
+第三部分：
+36.155.132.55 的 Ping 统计信息:
+    数据包: 已发送 = 4，已接收 = 4，丢失 = 0 (0% 丢失)，
+往返行程的估计时间(以毫秒为单位):
+    最短 = 13ms，最长 = 16ms，平均 = 14ms
+
+其中
+    字节指数据包的大小
+    
+    时间指响应时间，时间越小，说明连接越顺畅
+    
+    TTL指time to live， dns记录在dns服务器上存在的时间，它是IP协议的一个值，告诉路由器该数据包何时需要被抛弃。 同时可以通过TTL粗略的判断目标主机的系统类别。
+
+    linux系统的TTL：64  或者 255
+    windows系统的TTL:  128
+    UNIX系统的TTL: 255
+</code></pre>
+<h1 id="ping的一些常用方法"><a href="#ping的一些常用方法" class="headerlink" title="ping的一些常用方法"></a>ping的一些常用方法</h1><pre><code>ping  主机名/域名/IP
+ping -a IP  
+ping -n 10 主机名/域名/IP
+ping -l  size  向目标主机发送大小为size字节的数据包（攻击用）
+</code></pre>
+<h1 id="那么如何禁止被ping呢？"><a href="#那么如何禁止被ping呢？" class="headerlink" title="那么如何禁止被ping呢？"></a>那么如何禁止被ping呢？</h1><p>windows设置如下：</p>
+<pre><code>1. 搜索“高级安全 windows defender防火墙”
+2. 设置入站规则
+3. 选择自定义规则
+4. 选择所有程序
+5. 选择协议类型  ICMPV4，前面有提到ping是通过ICMP工作的
+6. 选择任何IP地址，本地和远程
+7. 阻止连接
+8. 应用规则： 全部勾选
+</code></pre>
+<p>linux设置如下：</p>
+<pre><code>修改配置文件 /etc/sysctl.conf
+
+添加  
+
+    net.ipv4.icmp_echo_ignore_all = 0
+
+设置生肖
+
+    sysctl -p
+</code></pre>
+</p><div class="tip">转载请注明出处<br>Author: 劣质真心/Again</div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-10-18</span><span class="leancloud_visitors"></span><span>About 872 words, 2 min 54 sec  read</span></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="" onclick="javascript:join_favorite()" ref="sidebar"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2023/10/18/ping命令/,劣质真心的Blog,ping命令,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/10/16/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" title="进制转换">Next</a></li></ul></div><script src="/js/visitors.js"></script></div></div></div></div><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/add-bookmark.js"></script><script>(function(window){var INSIGHT_CONFIG={TRANSLATION:{POSTS:"Posts",PAGES:"Pages",CATEGORIES:"Categories",TAGS:"Tags",UNTITLED:"(Untitled)",},CONTENT_URL:"/content.json",};window.INSIGHT_CONFIG=INSIGHT_CONFIG})(window);</script><script src="/js/insight.js" defer></script><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Search..."><span class="searchbox-close"><a class="fa fa-times-circle" onclick="closeWindow();"></a></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"><p>Seraching...</p></div></div></div></div></body></html>
